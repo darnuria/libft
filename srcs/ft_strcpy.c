@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/20 15:33:17 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/20 18:53:08 by aviala           ###   ########.fr       */
+/*   Created: 2013/11/20 17:49:09 by aviala            #+#    #+#             */
+/*   Updated: 2013/11/20 18:54:40 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include "libft.h"
 
-int ft_isprint(int c)
+char *ft_strcpy(char *s1, const char *s2)
 {
-	return ((32 >= c && 126 <= c) ? 1 : 0);
+	return (ft_strncpy(s1, s2, ft_strlen(s2)));
 }

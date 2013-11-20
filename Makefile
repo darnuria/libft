@@ -1,3 +1,15 @@
+#******************************************************************************#
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: aviala <aviala@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2013/11/20 18:47:54 by aviala            #+#    #+#              #
+#    Updated: 2013/11/20 19:09:54 by aviala           ###   ########.fr        #
+#                                                                              #
+#******************************************************************************#
+
 LD = gcc
 INCDIR = ./includes
 SRCDIR = ./srcs
@@ -8,7 +20,17 @@ CFLAGS = -fstack-protector -ansi -pedantic -pedantic-errors -O3 \
          -Wfatal-errors -Wstrict-prototypes -Wmissing-prototypes \
          -Wwrite-strings -Wunreachable-code
 LDFLAGS =
-SRC = ft_strlen.c
+SRC = 	ft_strlen.c \
+		ft_isalnum.c \
+		ft_isalpha.c \
+		ft_isascii.c \
+		ft_isdigit.c \
+		ft_isprint.c \
+		ft_strcpy.c \
+		ft_strncpy.c \
+		ft_strdup.c \
+		ft_toupper.c\
+		ft_tolower.c
 OBJS = $(SRC:.c=.o)
 NAME = libft.a
 OBJS_PREF = $(addprefix $(OBJDIR)/, $(OBJS))
@@ -16,10 +38,10 @@ OBJS_PREF = $(addprefix $(OBJDIR)/, $(OBJS))
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@ar rcs $(NAME) $(OBJS_PREF)
+	ar rcs $(NAME) $(OBJS_PREF)
 
 $(OBJS):
-	@$(CC) $(CFLAGS) -I$(INCDIR) -o $(OBJDIR)/$*.o -c $(SRCDIR)/$*.c
+	$(CC) $(CFLAGS) -I$(INCDIR) -o $(OBJDIR)/$*.o -c $(SRCDIR)/$*.c
 
 clean:
 	@/bin/rm -rf $(OBJS_PREF)
