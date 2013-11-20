@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/19 16:07:22 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/20 13:52:01 by aviala           ###   ########.fr       */
+/*   Created: 2013/11/20 14:51:26 by aviala            #+#    #+#             */
+/*   Updated: 2013/11/20 14:57:45 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h> /* size_t  */
 #include "libft.h"
 
-size_t ft_strlen(const char *s)
+int ft_toupper(int c)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+	return ((c >= 'a') && (c <= 'z')) ? c - 32 : c);
 }

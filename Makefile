@@ -16,16 +16,16 @@ OBJS_PREF = $(addprefix $(OBJDIR)/, $(OBJS))
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS_PREF)
+	@ar rcs $(NAME) $(OBJS_PREF)
 
 $(OBJS):
-	$(CC) $(CFLAGS) -I$(INCDIR) -o $(OBJDIR)/$*.o -c $(SRCDIR)/$*.c
+	@$(CC) $(CFLAGS) -I$(INCDIR) -o $(OBJDIR)/$*.o -c $(SRCDIR)/$*.c
 
 clean:
-	/bin/rm -rf $(OBJS_PREF)
+	@/bin/rm -rf $(OBJS_PREF)
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@/bin/rm -f $(NAME)
 
 re: fclean all
 

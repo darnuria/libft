@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/19 16:07:22 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/20 13:52:01 by aviala           ###   ########.fr       */
+/*   Created: 2013/11/20 15:24:30 by aviala            #+#    #+#             */
+/*   Updated: 2013/11/20 15:27:18 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h> /* size_t  */
 #include "libft.h"
 
-size_t ft_strlen(const char *s)
+int ft_isalnum(int c)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+	return ((ft_isalpha(c) || ft_isdigit(c)) ? 1 : 0);
 }
