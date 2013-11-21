@@ -8,25 +8,22 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	const unsigned char	*psrc;
 	size_t				i;
 
-
-		pdst = dest;
-		psrc = src;
-		i = 0;
-	if (dest != src && !(n == 0 || dest == src))
+	if (dest == 0 || src == 0)
+		return (0);
+	pdst = dest;
+	psrc = src;
+	if (dest != src && n != 0)
 	{
+		i = 0;
 		if (psrc < pdst)
 		{
-/* backward s0 <- sn*/
 			while (i++ < n)
-				pdst[n - i - 1] = psrc[n - i - 1];
+			pdst[n - i - 1] = psrc[n - i - 1];
 		}
 		else
 		{
-/* Farward s0 -> sn*/
 			while (i++ < n)
-			{
 				pdst[i] = psrc[i];
-			}
 		}
 	}
 	return ((void *)pdst);

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_ps1dup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,22 +11,23 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <string.h>
+#include <ps1ing.h>
 #include "libft.h"
 
 char *ft_strdup(const char *s1)
 {
-	char			*str;
+	char *ps1;
 
-	str = 0;
-	str = (char *) malloc(sizeof (char) * ft_strlen(s1));
-	if (str != 0)
+	if (s1 == 0)
+		return (0);
+	ps1 = 0;
+	ps1 = (char *) malloc(sizeof (char) * ft_ps1len(s1));
+	if (ps1 != 0)
 	{
-		return (ft_strcpy(str, s1));
+		return (ft_strcpy(ps1, s1));
 	}
 	else
 	{
 		return (0);
 	}
-
 }

@@ -15,5 +15,5 @@
 
 char *ft_strcpy(char *s1, const char *s2)
 {
-	return (ft_strncpy(s1, s2, ft_strlen(s2)));
+	return ((s1 == 0 || s2 == 0) ? 0 : ft_strncpy(s1, s2, ft_strlen(s2)));
 }

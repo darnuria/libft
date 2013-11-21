@@ -18,6 +18,8 @@ char    *ft_strncpy(char *s1, const char *s2, size_t n)
 	size_t			len;
 	unsigned int	i;
 
+	if (s1 == 0 && s2 == 0)
+		return (0);
 	if (s1 != 0)
 	{
 		i = 0;
