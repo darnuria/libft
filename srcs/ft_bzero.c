@@ -8,7 +8,7 @@ void ft_bzero(void *s, size_t n)
 	char	*str;
 
 	if (s == 0)
-		return (0);
+		return;
 	str = s;
 	i = 0;
 	while (i < n)

@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <ps1ing.h>
+#include <string.h>
 #include "libft.h"
 
 char *ft_strdup(const char *s1)
@@ -21,7 +21,7 @@ char *ft_strdup(const char *s1)
 	if (s1 == 0)
 		return (0);
 	ps1 = 0;
-	ps1 = (char *) malloc(sizeof (char) * ft_ps1len(s1));
+	ps1 = (char *) malloc(sizeof (char) * ft_strlen(s1));
 	if (ps1 != 0)
 	{
 		return (ft_strcpy(ps1, s1));
