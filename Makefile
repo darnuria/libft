@@ -6,7 +6,7 @@
 #    By: aviala <aviala@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/20 18:47:54 by aviala            #+#    #+#              #
-#    Updated: 2013/11/20 19:09:54 by aviala           ###   ########.fr        #
+#    Updated: 2013/11/21 14:55:07 by aviala           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -23,7 +23,7 @@ LDFLAGS =
 SRC = 	ft_strlen.c		ft_isalnum.c	ft_isalpha.c	ft_isascii.c \
 		ft_isdigit.c 	ft_isprint.c 	ft_strcpy.c 	ft_strncpy.c \
 		ft_strdup.c 	ft_toupper.c 	ft_tolower.c	ft_memcpy.c \
-		ft_memccpy.c	ft_bzero.c      ft_memchr.c
+		ft_memccpy.c	ft_bzero.c      ft_memchr.c		ft_memmove.c
 OBJS = $(SRC:.c=.o)
 NAME = libft.a
 OBJS_PREF = $(addprefix $(OBJDIR)/, $(OBJS))
