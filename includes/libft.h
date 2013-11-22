@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/19 16:07:32 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/22 16:49:13 by aviala           ###   ########.fr       */
+/*   Updated: 2013/11/22 17:20:22 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,10 @@ void	ft_bzero(void *s, size_t n);
 char	*ft_strdup(const char *s1);
 char	*ft_strncpy(char *s1, const char *s2, size_t n);
 char	*ft_strcpy(char *s1, const char *s2);
-char	*strchr(const char *s, int c);
-char	*strrchr(const char *s, int c);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int c);
+char	*ft_strnstr(const char *s1, const char *s2, size_t n);
+char	*ft_strstr(const char *s1, const char *s2, size_t n);
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
