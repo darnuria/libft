@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 14:15:00 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/22 14:40:08 by aviala           ###   ########.fr       */
+/*   Updated: 2013/11/22 14:41:11 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char *strchr(const char *s, int c)
 		return (NULL);
 	i = 0;
 	to_find = (char) c;
-	while (s[i] != to_find && i <= ft_strlen(s) )
+	while (s[i] != to_find && i <= ft_strlen(s))
 	{
 		i++;
 	}

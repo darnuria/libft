@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/20 15:33:17 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/22 14:58:56 by aviala           ###   ########.fr       */
+/*   Created: 2013/11/22 15:05:03 by aviala            #+#    #+#             */
+/*   Updated: 2013/11/22 15:15:15 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include "libft.h"
 
-int ft_isprint(int c)
+char *strrchr(const char *s, int c)
 {
-	return ((32 >= c && 126 <= c));
+	int		i;
+	char	to_find;
+
+	if (s == 0)
+		return (NULL);
+	to_find = (char) c;
+	i = (int) ft_strlen(s);
+	while (s[i] != to_find && i > 0)
+	{
+		i--;
+	}
+	return ((s[i] == to_find) ? (char *) &s[i] : NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/19 16:07:32 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/21 14:53:47 by aviala           ###   ########.fr       */
+/*   Updated: 2013/11/22 16:49:13 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,6 @@
 # define LIBFT_H
 
 #include <string.h>
-
-typedef struct 		s_2D_point
-{
-	int	x;
-	int y;
-}					t_2D_point;
 
 int		ft_atoi(const char *nptr);
 size_t	ft_strlen(const char *s);
@@ -41,7 +35,9 @@ void	ft_bzero(void *s, size_t n);
 char	*ft_strdup(const char *s1);
 char	*ft_strncpy(char *s1, const char *s2, size_t n);
 char	*ft_strcpy(char *s1, const char *s2);
+char	*strchr(const char *s, int c);
+char	*strrchr(const char *s, int c);
 int		ft_strcmp(const char *s1, const char *s2);
-
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 #endif /* !LIBFT_H */

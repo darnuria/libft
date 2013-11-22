@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/20 15:24:30 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/22 13:51:52 by aviala           ###   ########.fr       */
+/*   Updated: 2013/11/22 15:23:02 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int ft_isalnum(int c)
 {
-	return ((ft_isalpha(c) || ft_isdigit(c)) ? 1 : 0);
+	return (ft_isalpha(c) || ft_isdigit(c));
 }
