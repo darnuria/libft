@@ -15,6 +15,13 @@
 
 #include <string.h>
 
+typedef struct 		s_2D_point
+{
+	int	x;
+	int y;
+}					t_2D_point;
+
+int		ft_atoi(const char *nptr);
 size_t	ft_strlen(const char *s);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
