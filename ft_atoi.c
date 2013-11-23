@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 14:01:37 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/22 17:31:45 by aviala           ###   ########.fr       */
+/*   Updated: 2013/11/23 17:36:59 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_atoi(const char *nptr)
 
 	mult = 1;
 	number = 0;
-	i = ft_strlen(nptr) - 1;
+	i = (int)ft_strlen(nptr) - 1;
 	while (nptr[i] == ' ' || nptr[i] == '\v' || nptr[i] == '\t' ||
 		   nptr[i] == '\n' || nptr[i] == '\r' || nptr[i] == '\f')
 		i++;
