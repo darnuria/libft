@@ -23,6 +23,7 @@ int	ft_atoi(const char *nptr)
 
 	mult = 1;
 	number = 0;
+	sign = 1;
 	i = (int)ft_strlen(nptr) - 1;
 	while (nptr[i] == ' ' || nptr[i] == '\v' || nptr[i] == '\t' ||
 		   nptr[i] == '\n' || nptr[i] == '\r' || nptr[i] == '\f')
@@ -34,7 +35,6 @@ int	ft_atoi(const char *nptr)
 	}
 	else if (nptr[0] == '+' || ft_isdigit(nptr[0]))
 	{
-		sign = 1;
 		i++;
 	}
 	while (i >= 0)

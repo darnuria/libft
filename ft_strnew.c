@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 18:42:49 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/23 20:23:04 by aviala           ###   ########.fr       */
+/*   Updated: 2013/11/23 21:29:46 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char *ft_strnew(size_t size)
 	{
 		if ((new_str = (char *) malloc(sizeof(char) * size)) == NULL)
 			return (NULL);
-		while (size >= 0)
+		while (size > 0)
 		{
 			new_str[size] = '\0';
 			size--;
