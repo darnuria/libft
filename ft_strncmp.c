@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 15:31:32 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/22 15:49:41 by aviala           ###   ########.fr       */
+/*   Updated: 2013/11/25 16:07:49 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,8 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
-	if (s1 == 0 || s2 == 0)
-		return (NULL);
 	i = 0;
-	while (i < n && (s1[i] && s2[i]))
+	while (i < n && (s1[i] || s2[i]))
 	{
 		if(s1[i] != s2[i])
 		{
@@ -29,5 +27,5 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
 		}
 		i++;
 	}
-	return (NULL);
+	return (0);
 }

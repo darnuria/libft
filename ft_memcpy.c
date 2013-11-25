@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 13:53:09 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/22 13:53:12 by aviala           ###   ########.fr       */
+/*   Updated: 2013/11/25 15:06:24 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,13 @@ void  *ft_memcpy(void *dest, const void *src, size_t n)
 	char		*dst;
 	const char	*s;
 
-	if (dest == 0 || src == 0)
-		return (0);
 	dst = dest;
 	s = src;
 	i = 0;
 	while (i < n)
 	{
 		dst[i] = s[i];
+		i++;
 	}
 	return (dst);
 }

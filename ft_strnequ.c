@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 20:06:37 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/23 20:10:59 by aviala           ###   ########.fr       */
+/*   Updated: 2013/11/25 16:24:06 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,5 @@
 
 int ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	unsigned int	i;
-
-	i = 0;
-	while ((s1[i] || s2[i]) || i > n)
-	{
-		if (s1[i] != s2[i])
-			return (0);
-		i++;
-	}
-	return (1);
+	return ((ft_strncmp(s1, s2, n) ? 0 : 1));
 }

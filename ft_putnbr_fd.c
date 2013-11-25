@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 20:40:15 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/23 21:11:16 by aviala           ###   ########.fr       */
+/*   Updated: 2013/11/25 17:26:09 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,13 @@ void ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd('-' , fd);
 		n *= -1;
 	}
-	if (n)
+	if (n > 9)
 	{
-		ft_putnbr(n / 10);
-		ft_putchar_fd(n % 10 + 48, fd);
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
+	else
+	{
+		ft_putchar_fd(n + 48, fd);
 	}
 }

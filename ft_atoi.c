@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 14:01:37 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/23 17:36:59 by aviala           ###   ########.fr       */
+/*   Updated: 2013/11/25 16:58:21 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,36 +15,26 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int			i;
-	int			temp;
-	int			number;
-	int			mult;
+	int			num;
 	int			sign;
 
-	mult = 1;
-	number = 0;
 	sign = 1;
-	i = (int)ft_strlen(nptr) - 1;
-	while (nptr[i] == ' ' || nptr[i] == '\v' || nptr[i] == '\t' ||
-		   nptr[i] == '\n' || nptr[i] == '\r' || nptr[i] == '\f')
-		i++;
-	if (nptr[0] == '-')
+	num = 0;
+	while (*nptr == ' ' || *nptr == '\v' || *nptr == '\t' ||
+		   *nptr == '\n' || *nptr == '\r' || *nptr == '\f')
+		nptr++;
+	if (*nptr == '+')
+		nptr++;
+	else if (*nptr == '-')
 	{
-		sign = -1;
-		i++;
+		nptr++;
+		sign *= -1;
 	}
-	else if (nptr[0] == '+' || ft_isdigit(nptr[0]))
+	while (ft_isdigit(*nptr))
 	{
-		i++;
+		num *= 10;
+		num += *nptr - '0';
+		nptr++;
 	}
-	while (i >= 0)
-	{
-		temp = nptr[i] - 48;
-		if (temp < 0 || temp > 9)
-			return (-1);
-		i--;
-		number += temp * mult;
-		mult *= 10;
-	}
-	return (sign * number);
+	return (sign * num);
 }
