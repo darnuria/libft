@@ -6,14 +6,18 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 18:42:11 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/23 18:42:37 by aviala           ###   ########.fr       */
+/*   Updated: 2013/11/26 18:50:01 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.c>
+#include <stdlib.h>
 #include "libft.h"
 
 void ft_memdel(void **ap)
 {
-
+	if (ap != NULL && *ap != NULL)
+	{
+		free(*ap);
+		*ap = NULL;
+	}
 }

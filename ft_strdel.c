@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 18:50:13 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/26 12:13:57 by aviala           ###   ########.fr       */
+/*   Updated: 2013/11/26 18:49:14 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@
 
 void ft_strdel(char **as)
 {
-	if (as != NULL)
+	if (as)
 	{
-		free(*as);
-		*as = NULL;
+		ft_memdel((void **)as);
 	}
 }
