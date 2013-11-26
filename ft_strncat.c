@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 19:09:00 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/23 17:44:58 by aviala           ###   ########.fr       */
+/*   Updated: 2013/11/26 17:53:25 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,20 @@
 
 char *ft_strncat(char *s1, const char *s2, size_t n)
 {
-	while (*s1++ != '\0')
-		;
-	while ((*s1++ = *s2++) && n > 0)
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	j = 0;
+	while (s1[i]!= '\0')
 	{
-		n--;
+		i++;
 	}
-	*s1 = '\0';
+	while ((s1[i] = s2[j]) && j < n)
+	{
+		i++;
+		j++;
+	}
+	s1[i] = '\0';
 	return (s1);
 }
