@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 20:25:13 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/26 12:08:41 by aviala           ###   ########.fr       */
+/*   Updated: 2013/11/26 17:27:52 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	i = 0;
 	str_new = ft_strnew(ft_strlen(s));
-	while (s[i++] != '\0')
+	while (s[i] != '\0')
 	{
 		str_new[i] = f(i, s[i]);
+		i++;
 	}
 	return (str_new);
 }
