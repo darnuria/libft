@@ -6,15 +6,23 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 20:25:13 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/23 20:25:50 by aviala           ###   ########.fr       */
+/*   Updated: 2013/11/26 12:08:41 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include <string.h>
 #include "libft.h"
 
-char * ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
+	char 	*str_new;
+	size_t	i;
 
+	i = 0;
+	str_new = ft_strnew(ft_strlen(s));
+	while (s[i++] != '\0')
+	{
+		str_new[i] = f(i, s[i]);
+	}
+	return (str_new);
 }

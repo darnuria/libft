@@ -6,32 +6,28 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 18:42:49 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/23 21:29:46 by aviala           ###   ########.fr       */
+/*   Updated: 2013/11/26 12:47:52 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <string.h>
 #include "libft.h"
-
+#include <stdio.h>
 char *ft_strnew(size_t size)
 {
-	char *new_str;
+	char	*new_str;
+	size_t	i;
 
-	new_str = NULL;
-	if (size > 0)
+	i = 0;
+	new_str = (char *) malloc(sizeof(char) * size);
+	if (new_str != NULL)
 	{
-		if ((new_str = (char *) malloc(sizeof(char) * size)) == NULL)
-			return (NULL);
-		while (size > 0)
+		while (i < size)
 		{
-			new_str[size] = '\0';
-			size--;
+				new_str[i++] = '\0';
 		}
-		return (new_str);
+		new_str[size] = '\0';
 	}
-	else
-	{
-		return (NULL);
-	}
+	return (new_str);
 }

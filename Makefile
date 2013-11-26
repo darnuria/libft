@@ -6,7 +6,7 @@
 #    By: aviala <aviala@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/20 18:47:54 by aviala            #+#    #+#              #
-#    Updated: 2013/11/25 17:58:48 by aviala           ###   ########.fr        #
+#    Updated: 2013/11/26 15:49:08 by aviala           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -33,12 +33,10 @@ SRC = 	ft_strlen.c		ft_isalnum.c		ft_isalpha.c	ft_isascii.c \
 		ft_strdel.c		ft_strclr.c			ft_strequ.c		ft_putendl.c \
 		ft_putchar.c	ft_putchar_fd.c		ft_putnbr.c		ft_putendl_fd.c \
 		ft_putnbr_fd.c	ft_putstr.c			ft_putstr_fd.c	ft_strnequ.c \
-		ft_strncmp.c	ft_striter.c		ft_striteri.c
+		ft_strncmp.c	ft_striter.c		ft_striteri.c	ft_strmap.c \
+		ft_strmapi.c
 #./ft_iota.c
 #./ft_strjoin.c
-#./ft_strmap.c
-#./ft_strmapi.c
-#./ft_strncpy.c
 #./ft_strsplit.c
 #./ft_strsub.c
 OBJS = $(SRC:.c=.o)

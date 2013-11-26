@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 13:51:23 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/25 16:29:45 by aviala           ###   ########.fr       */
+/*   Updated: 2013/11/26 15:58:07 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 
 char *ft_strstr(const char *s1, const char *s2)
 {
-	return ((s1 == 0 || s2 == 0) ? 0 : ft_strnstr(s1, s2, ft_strlen(s1)));
+	return (ft_strnstr(s1, s2, ft_strlen(s1)));
 }
