@@ -6,7 +6,7 @@
 #    By: aviala <aviala@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/20 18:47:54 by aviala            #+#    #+#              #
-#    Updated: 2013/11/26 18:46:05 by aviala           ###   ########.fr        #
+#    Updated: 2013/11/27 22:46:38 by aviala           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -15,7 +15,7 @@ INCDIR = .
 SRCDIR = .
 OBJDIR = .
 CC = gcc
-CFLAGS =  -g -fstack-protector-all -ansi -Wshadow -Wall -Werror -Wextra -O3 \
+CFLAGS =  -g3 -fstack-protector-all -ansi -Wshadow -Wall -Werror -Wextra -O3 \
 		 -Wunreachable-code -Wstack-protector -pedantic-errors \
 		 -Wfatal-errors -Wstrict-prototypes -Wmissing-prototypes \
 		 -Wwrite-strings -Wunreachable-code -pedantic \
