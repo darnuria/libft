@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 20:06:37 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/25 16:24:06 by aviala           ###   ########.fr       */
+/*   Updated: 2013/11/27 12:22:49 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 
 int ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	return ((ft_strncmp(s1, s2, n) ? 0 : 1));
+	return (!ft_strncmp(s1, s2, n));
 }

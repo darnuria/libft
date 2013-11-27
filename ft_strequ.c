@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 19:16:19 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/25 16:26:21 by aviala           ###   ########.fr       */
+/*   Updated: 2013/11/27 12:22:19 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 
 int ft_strequ(char const *s1, char const *s2)
 {
-	return (ft_strcmp(s1, s2) ? 0 : 1);
+	return (!ft_strcmp(s1, s2));
 }
