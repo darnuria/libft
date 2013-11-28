@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/20 19:03:14 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/28 16:51:34 by aviala           ###   ########.fr       */
+/*   Updated: 2013/11/28 18:46:28 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char    *ft_strncpy(char *s1, const char *s2, size_t n)
 		s1[i] = s2[i];
 		i++;
 	}
-	while (i <= n)
+	while (i < n)
 	{
 		s1[i] = '\0';
 		i++;
