@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 19:09:13 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/28 16:56:07 by aviala           ###   ########.fr       */
+/*   Updated: 2013/11/28 17:20:37 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t ft_strlcat(char *dst, const char *src, size_t size)
 	size_t		dst_len;
 
 	psrc = src;
-	dst_len = (dst - (char *)ft_memchr(dst, '\0', size));
+	dst_len = ((char *)ft_memchr(dst, '\0', size) - dst);
 	n = size - dst_len;
 	if (n == 0)
 		return (dst_len + ft_strlen(psrc));
