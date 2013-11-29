@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 19:09:13 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/29 18:16:56 by aviala           ###   ########.fr       */
+/*   Updated: 2013/11/29 19:23:05 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,24 @@
 
 size_t ft_strlcat(char *dst, const char *src, size_t size)
 {
-	const char	*psrc;
-	size_t		n;
-	size_t		dst_len;
+	size_t		i;
+	size_t		j;
+	size_t		ret;
+	size_t		src_len;
 
+	j = 0;
 	if (size == 0 || dst == NULL)
 		return (0);
-	psrc = src;
-	dst_len = ((char *)ft_memchr(dst, '\0', size) - dst);
-	n = size - dst_len;
-	if (n == 0)
-		return (dst_len + ft_strlen(psrc));
-	while (*psrc != '\0')
+	i = ft_strlen(dst);
+	src_len = ft_strlen(src);
+	if (i > size)
+		return (size + src_len);
+	ret = i + src_len;
+	while (src[j] != '\0' && i + j < size - 1)
 	{
-		if (n != 1 || size != 1)
-		{
-			*dst++ = *psrc;
-			n--;
-			size--;
-		}
-		psrc++;
+		dst[i + j] = src[j];
+		j++;
 	}
-	*dst = '\0';
-	return (dst_len + (psrc - src));
+	dst[i + j] = '\0';
+	return (ret);
 }
