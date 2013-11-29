@@ -10,18 +10,24 @@
 #                                                                              #
 #******************************************************************************#
 
-LD = gcc
+
 INCDIR = .
 SRCDIR = .
 OBJDIR = .
 CC = gcc
+LD = $(CC)
+GCCVERSION = $(shell $(CC) --version | grep ^$(CC) | sed 's/^.* //g')
 CFLAGS =  -g3 -fstack-protector-all -ansi -Wshadow -Wall -Werror -Wextra -O3 \
 		 -Wunreachable-code -Wstack-protector -pedantic-errors \
 		 -Wfatal-errors -Wstrict-prototypes -Wmissing-prototypes \
 		 -Wwrite-strings -Wunreachable-code -pedantic \
 		 -Wunknown-pragmas -Wdeclaration-after-statement \
 		 -Wold-style-definition -Wmissing-field-initializers \
-		 -Winline
+		 -Winline -Wunsafe-loop-optimizations
+ifeq "$(GCCVERSION)" "4.8.1"
+    CFLAGS += -Wno-unused-result
+endif
+
 LDFLAGS =
 SRC = 	ft_strlen.c		ft_isalnum.c		ft_isalpha.c	ft_isascii.c \
 		ft_isdigit.c 	ft_isprint.c		ft_strcpy.c 	ft_strncpy.c \
