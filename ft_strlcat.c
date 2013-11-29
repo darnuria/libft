@@ -22,7 +22,6 @@ size_t ft_strlcat(char *dst, const char *src, size_t size)
 	psrc = src;
 	dst_len = ((char *)ft_memchr(dst, '\0', size) - dst);
 	n = size - dst_len;
-	printf("n: %lu \n", n);
 	if (n == 0)
 		return (dst_len + ft_strlen(psrc));
 	while (*psrc != '\0')
