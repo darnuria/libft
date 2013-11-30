@@ -6,7 +6,7 @@
 #    By: aviala <aviala@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/20 18:47:54 by aviala            #+#    #+#              #
-#    Updated: 2013/11/27 22:46:38 by aviala           ###   ########.fr        #
+#    Updated: 2013/11/29 17:15:26 by aviala           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -41,8 +41,7 @@ SRC = 	ft_strlen.c		ft_isalnum.c		ft_isalpha.c	ft_isascii.c \
 		ft_putnbr_fd.c	ft_putstr.c			ft_putstr_fd.c	ft_strnequ.c \
 		ft_strncmp.c	ft_striter.c		ft_striteri.c	ft_strmap.c \
 		ft_strmapi.c	ft_strsub.c			ft_strjoin.c	ft_memalloc.c \
-		ft_memdel.c
-#ft_strsplit.c
+		ft_memdel.c		ft_strsplit.c
 #ft_iota.c
 OBJS = $(SRC:.c=.o)
 NAME = libft.a
