@@ -6,24 +6,28 @@
 #    By: aviala <aviala@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/20 18:47:54 by aviala            #+#    #+#              #
-#    Updated: 2013/12/01 17:04:03 by aviala           ###   ########.fr        #
+#    Updated: 2013/12/01 17:09:44 by aviala           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
-
+DEBUG =
 INCDIR = .
 SRCDIR = .
 OBJDIR = .
 CC = gcc
 LD = $(CC)
 GCCVERSION = $(shell $(CC) --version | grep ^$(CC) | sed 's/^.* //g')
-CFLAGS = -fstack-protector-all -ansi -Wshadow -Wall -Werror -Wextra -O3 \
+ifeq ($(DEBUG),yes)
+	CFLAGS = -fstack-protector-all -ansi -Wshadow -Wall -Werror -Wextra -O3 \
 		 -Wunreachable-code -Wstack-protector -pedantic-errors \
 		 -Wfatal-errors -Wstrict-prototypes -Wmissing-prototypes \
 		 -Wwrite-strings -Wunreachable-code -pedantic \
 		 -Wunknown-pragmas -Wdeclaration-after-statement \
 		 -Wold-style-definition -Wmissing-field-initializers \
-		 -Winline -Wunsafe-loop-optimizations
+		 -Winline -Wunsafe-loop-optimizations -g -W
+else
+	CFLAGS= -Wall -Wextra -Werror
+endif
 ifeq "$(GCCVERSION)" "4.8.1"
     CFLAGS += -Wno-unused-result
 endif
