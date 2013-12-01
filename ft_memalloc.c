@@ -6,16 +6,16 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 18:40:40 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/26 18:41:58 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/01 20:57:55 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-void *ft_memalloc(size_t size)
+void	*ft_memalloc(size_t size)
 {
-	void *new_ptr;
+	void	*new_ptr;
 
 	if (size)
 	{

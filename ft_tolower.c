@@ -6,13 +6,13 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/20 13:56:17 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/25 15:16:41 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/01 20:46:41 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	return ((c >= 'A' && c <= 'Z') ? (c + 32) : c);
 }

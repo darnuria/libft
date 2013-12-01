@@ -6,14 +6,14 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 20:23:45 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/26 12:09:59 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/01 20:50:11 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include "libft.h"
 
-char *ft_strmap(char const *s, char (*f)(char))
+char	*ft_strmap(char const *s, char (*f)(char))
 {
 	char	*str_new;
 	size_t	i;

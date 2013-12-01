@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 14:01:37 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/01 15:10:35 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/01 20:59:47 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int			num;
-	int			sign;
+	int	num;
+	int	sign;
 
 	sign = 1;
 	num = 0;

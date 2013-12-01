@@ -6,14 +6,14 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 20:32:43 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/25 14:51:09 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/01 20:54:36 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "libft.h"
 
-void ft_putendl(char const *s)
+void	ft_putendl(char const *s)
 {
 	ft_putendl_fd(s, 1);
 }

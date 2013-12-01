@@ -6,13 +6,13 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/20 15:24:30 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/22 15:23:02 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/01 20:59:22 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalnum(int c)
+int		ft_isalnum(int c)
 {
 	return (ft_isalpha(c) || ft_isdigit(c));
 }

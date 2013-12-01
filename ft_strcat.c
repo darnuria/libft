@@ -6,14 +6,14 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 19:08:54 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/26 17:48:09 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/01 20:54:11 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include "libft.h"
 
-char *ft_strcat(char *s1, const char *s2)
+char	*ft_strcat(char *s1, const char *s2)
 {
 	size_t	i;
 	size_t	j;

@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 18:50:13 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/26 18:49:14 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/01 20:53:43 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 #include <string.h>
 #include "libft.h"
 
-void ft_strdel(char **as)
+void	ft_strdel(char **as)
 {
 	if (as)
 	{
-		ft_memdel((void **)as);
+		ft_memdel((void **) as);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 20:26:54 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/01 20:03:31 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/01 21:00:15 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 static	void ft_minmax(char *s, const int n)
 {
-	if ((long)n == -2147483648)
+	if ((long) n == -2147483648)
 		ft_strcpy(s, "-2147483648");
-	else if ((long)n == 2147483647)
+	else if ((long) n == 2147483647)
 		ft_strcpy(s, "2147483647");
 	else if (n == 0)
 		s[0] = '0';

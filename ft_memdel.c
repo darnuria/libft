@@ -6,14 +6,14 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 18:42:11 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/26 18:50:01 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/01 20:56:08 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-void ft_memdel(void **ap)
+void	ft_memdel(void **ap)
 {
 	if (ap != NULL && *ap != NULL)
 	{

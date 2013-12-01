@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 13:53:40 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/27 10:53:30 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/01 20:55:19 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ void	*ft_memmove(void *s1, const void *s2, size_t n)
 	ft_memcpy(tmp, s2, n);
 	ft_memcpy(s1, tmp, n);
 	ft_memdel(&tmp);
-	return ((void *)s1);
+	return ((void *) s1);
 }

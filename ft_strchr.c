@@ -6,14 +6,14 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 14:15:00 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/22 17:21:05 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/01 20:54:00 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	size_t	i;
 	char	to_find;

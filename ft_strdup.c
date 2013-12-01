@@ -6,17 +6,16 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 13:54:24 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/27 14:18:36 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/01 20:53:24 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include <string.h>
 #include "libft.h"
 
-char *ft_strdup(const char *s1)
+char	*ft_strdup(const char *s1)
 {
-	char *new_s1;
+	char	*new_s1;
 
 	if (s1 == 0)
 		return (0);

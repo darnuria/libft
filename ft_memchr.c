@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2013/12/01 20:56:19 by aviala            #+#    #+#             */
+/*   Updated: 2013/12/01 20:57:16 by aviala           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <string.h>
 #include "libft.h"
@@ -11,9 +22,9 @@ void 	*ft_memchr(const void *s, int c, size_t n)
 		return (NULL);
 	str = s;
 	i = 0;
-	while (i < n && str[i] != (unsigned char)c)
+	while (i < n && str[i] != (unsigned char) c)
 	{
 		i++;
 	}
-	return ((i != n) ? (void *)(str + i) : 0);
+	return ((i != n) ? (void *) (str + i) : 0);
 }

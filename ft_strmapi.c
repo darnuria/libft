@@ -6,16 +6,16 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 20:25:13 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/26 17:27:52 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/01 20:50:05 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include "libft.h"
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char 	*str_new;
+	char	*str_new;
 	size_t	i;
 
 	i = 0;

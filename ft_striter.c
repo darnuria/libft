@@ -6,14 +6,14 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 20:16:08 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/26 15:47:03 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/01 20:53:05 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include "libft.h"
 
-void ft_striter(char *s, void (*f)(char *))
+void	ft_striter(char *s, void (*f)(char *))
 {
 	while (*s++)
 	{

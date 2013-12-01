@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 20:14:49 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/01 16:45:57 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/01 20:45:39 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int ft_istrailling(char c)
 }
 
 #include <stdio.h>
-char *ft_strtrim(char const *s)
+char		*ft_strtrim(char const *s)
 {
 	char	*str_new;
 	size_t	i;
