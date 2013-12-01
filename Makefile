@@ -6,7 +6,7 @@
 #    By: aviala <aviala@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/20 18:47:54 by aviala            #+#    #+#              #
-#    Updated: 2013/12/01 15:58:20 by aviala           ###   ########.fr        #
+#    Updated: 2013/12/01 17:04:03 by aviala           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -17,7 +17,7 @@ OBJDIR = .
 CC = gcc
 LD = $(CC)
 GCCVERSION = $(shell $(CC) --version | grep ^$(CC) | sed 's/^.* //g')
-CFLAGS =  -g3 -fstack-protector-all -ansi -Wshadow -Wall -Werror -Wextra -O3 \
+CFLAGS = -fstack-protector-all -ansi -Wshadow -Wall -Werror -Wextra -O3 \
 		 -Wunreachable-code -Wstack-protector -pedantic-errors \
 		 -Wfatal-errors -Wstrict-prototypes -Wmissing-prototypes \
 		 -Wwrite-strings -Wunreachable-code -pedantic \
