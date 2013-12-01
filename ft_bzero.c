@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 13:57:16 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/22 13:57:21 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/01 15:13:08 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void ft_bzero(void *s, size_t n)
 	size_t	i;
 	char	*str;
 
-	if (s == 0)
-		return;
 	str = s;
 	i = 0;
 	while (i < n)

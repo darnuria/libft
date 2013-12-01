@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 13:52:51 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/23 17:35:32 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/01 14:58:53 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		if(ps1[i] != ps2[i])
+		if (ps1[i] != ps2[i])
 		{
 			return (ps1[i] - ps2[i]);
 		}
