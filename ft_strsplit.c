@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 13:55:40 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/30 07:06:02 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/01 14:25:40 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,25 +49,38 @@ static size_t	ft_strpos(const char *s, const char c)
 	return (i);
 }
 
+static char **ft_strnew2d(size_t len)
+{
+	char	**new_str;
+
+	if ((new_str = (char **) malloc(sizeof(char **) * len+ 1)) == NULL)
+		return (NULL);
+	ft_bzero(new_str, len);
+	return (new_str);
+}
+
 char			**ft_strsplit(const char *s, const char c)
 {
 	char	**dest;
 	size_t	y;
+	size_t	x;
 	size_t	pos;
 	size_t	i;
 
 	i = 0;
-	y = ft_gety(s, c) + 1;
-	dest = (char **) malloc(sizeof(char **) * y);
+	y = ft_gety(s, c);
+	if ((dest = ft_strnew2d(y)) == NULL)
+		return (NULL);
 	dest[y] = '\0';
+	x = 0;
 	while (i < y)
 	{
-		while (s[i] == c)
-			i++;
-		pos = ft_strpos(&s[i], c);
-		*dest = ft_strsub(s, i, pos);
-		i += pos;
-		y++;
+		while (s[x] == c)
+			x++;
+		pos = ft_strpos(&s[x], c);
+		dest[i] = ft_strsub(s, x, pos);
+		x += pos;
+		i++;
 	}
 	return (dest);
 }
