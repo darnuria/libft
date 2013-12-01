@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iota.c                                          :+:      :+:    :+:   */
+/*   ft_swapchar.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/23 20:26:54 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/23 20:27:37 by aviala           ###   ########.fr       */
+/*   Created: 2013/12/01 19:28:00 by aviala            #+#    #+#             */
+/*   Updated: 2013/12/01 20:06:27 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <string.h>
 #include "libft.h"
 
-char * ft_itoa(int n)
+void	ft_swapchar(char *a, char *b)
 {
+	char	swap;
 
+	swap = *a;
+	*a = *b;
+	*b = swap;
 }
