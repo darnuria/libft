@@ -6,7 +6,7 @@
 #    By: aviala <aviala@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/20 18:47:54 by aviala            #+#    #+#              #
-#    Updated: 2013/12/01 21:55:14 by aviala           ###   ########.fr        #
+#    Updated: 2013/12/01 23:12:45 by aviala           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -46,7 +46,7 @@ SRC = 	ft_strlen.c		ft_isalnum.c		ft_isalpha.c	ft_isascii.c \
 		ft_strncmp.c	ft_striter.c		ft_striteri.c	ft_strmap.c \
 		ft_strmapi.c	ft_strsub.c			ft_strjoin.c	ft_memalloc.c \
 		ft_memdel.c		ft_strsplit.c		ft_strtrim.c	ft_itoa.c \
-		ft_strrev.c		ft_swapchar.c		ft_lstnew.c
+		ft_strrev.c		ft_swapchar.c		ft_lstnew.c		ft_lstdelone.c
 OBJS = $(SRC:.c=.o)
 NAME = libft.a
 OBJS_PREF = $(addprefix $(OBJDIR)/, $(OBJS))
