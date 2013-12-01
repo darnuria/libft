@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/19 16:07:32 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/01 20:44:56 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/01 21:19:43 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct	s_list
 	struct s_list	*next;
 }				t_list;
 
+t_list*	ft_lstnew(void const *content, size_t content_size);
 int		ft_atoi(const char *nptr);
 void	ft_bzero(void *s, size_t n);
 char	*ft_itoa(int n);
