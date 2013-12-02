@@ -6,7 +6,7 @@
 #    By: aviala <aviala@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/20 18:47:54 by aviala            #+#    #+#              #
-#    Updated: 2013/12/01 23:28:33 by aviala           ###   ########.fr        #
+#    Updated: 2013/12/02 06:14:37 by aviala           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -26,7 +26,7 @@ ifeq ($(DEBUG),yes)
 		 -Wold-style-definition -Wmissing-field-initializers \
 		 -Winline -Wunsafe-loop-optimizations -g -W
 else
-	CFLAGS= -Wall -Wextra -Werror
+	CFLAGS= -Wall -Wextra -Werror -g
 endif
 ifeq "$(GCCVERSION)" "4.8.1"
     CFLAGS += -Wno-unused-result
@@ -47,7 +47,7 @@ SRC = 	ft_strlen.c		ft_isalnum.c		ft_isalpha.c	ft_isascii.c \
 		ft_strmapi.c	ft_strsub.c			ft_strjoin.c	ft_memalloc.c \
 		ft_memdel.c		ft_strsplit.c		ft_strtrim.c	ft_itoa.c \
 		ft_strrev.c		ft_swapchar.c		ft_lstnew.c		ft_lstdelone.c \
-		ft_lstadd.c
+		ft_lstadd.c		ft_lstdel.c			ft_lstiter.c	ft_lstmap.c
 OBJS = $(SRC:.c=.o)
 NAME = libft.a
 OBJS_PREF = $(addprefix $(OBJDIR)/, $(OBJS))
