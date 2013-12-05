@@ -18,7 +18,6 @@ static int ft_istrailling(char c)
 	return (c == ' ' || c == '\n' || c == '\t');
 }
 
-#include <stdio.h>
 char		*ft_strtrim(char const *s)
 {
 	char	*str_new;

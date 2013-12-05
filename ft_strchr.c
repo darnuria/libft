@@ -16,15 +16,17 @@
 char	*ft_strchr(const char *s, int c)
 {
 	size_t	i;
-	char	to_find;
 
 	if (s == 0)
 		return (NULL);
 	i = 0;
-	to_find = (char) c;
-	while (s[i] != to_find && i <= ft_strlen(s))
+	while (i <= ft_strlen(s))
 	{
+		if (s[i] == (char) c)
+		{
+			return ((char *) &s[i]);
+		}
 		i++;
 	}
-	return ((s[i] == to_find) ? (char *) &s[i] : NULL);
+	return (NULL);
 }
