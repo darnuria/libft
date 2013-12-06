@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/01 20:56:19 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/01 20:57:16 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/06 19:21:57 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void 	*ft_memchr(const void *s, int c, size_t n)
 
 	if (s == 0)
 		return (NULL);
-	str = s;
+	str = (unsigned char *) s;
 	i = 0;
 	while (i < n && str[i] != (unsigned char) c)
 	{

@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/20 15:00:04 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/01 21:00:33 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/06 19:22:36 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memset(void *b, int c, size_t len)
 	unsigned char	*pb;
 	size_t			i;
 
-	pb = b;
+	pb = (unsigned char *) b;
 	i = 0;
 	while (i < len)
 	{

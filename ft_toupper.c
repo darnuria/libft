@@ -14,5 +14,5 @@
 
 int ft_toupper(int c)
 {
-	return ((c >= 'a' && c <= 'z') ? (c - 32) : c);
+	return (ft_islower(c) ? (c - 32) : c);
 }

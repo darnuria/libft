@@ -26,7 +26,7 @@ char		*ft_strtrim(char const *s)
 
 	i = 0;
 	j = 0;
-	while (ft_istrailling(s[i]))
+	while (ft_isspace(s[i]))
 	{
 		i++;
 	}

@@ -14,19 +14,19 @@ DEBUG =
 INCDIR = .
 SRCDIR = .
 OBJDIR = .
-CC = gcc
+CC = cc
 LD = $(CC)
 GCCVERSION = $(shell $(CC) --version | grep ^$(CC) | sed 's/^.* //g')
 ifeq ($(DEBUG),yes)
-	CFLAGS = -fstack-protector-all -ansi -Wshadow -Wall -Werror -Wextra -O3 \
+	CFLAGS = -fstack-protector-all -ansi -Wshadow -Wall -Werror -Wextra \
 		 -Wunreachable-code -Wstack-protector -pedantic-errors \
 		 -Wfatal-errors -Wstrict-prototypes -Wmissing-prototypes \
 		 -Wwrite-strings -Wunreachable-code -pedantic \
 		 -Wunknown-pragmas -Wdeclaration-after-statement \
 		 -Wold-style-definition -Wmissing-field-initializers \
-		 -Winline -Wunsafe-loop-optimizations -g -W
+		 -Winline -g -W
 else
-	CFLAGS= -Wall -Wextra -Werror -g
+	CFLAGS= -Wall -Wextra -Werror -O3
 endif
 ifeq "$(GCCVERSION)" "4.8.1"
     CFLAGS += -Wno-unused-result
@@ -47,7 +47,8 @@ SRC = 	ft_strlen.c		ft_isalnum.c		ft_isalpha.c	ft_isascii.c \
 		ft_strmapi.c	ft_strsub.c			ft_strjoin.c	ft_memalloc.c \
 		ft_memdel.c		ft_strsplit.c		ft_strtrim.c	ft_itoa.c \
 		ft_strrev.c		ft_swapchar.c		ft_lstnew.c		ft_lstdelone.c \
-		ft_lstadd.c		ft_lstdel.c			ft_lstiter.c
+		ft_lstadd.c		ft_lstdel.c			ft_lstiter.c	ft_isspace.c \
+		ft_islower.c	ft_isupper.c
 #ft_lstmap.c
 OBJS = $(SRC:.c=.o)
 NAME = libft.a
