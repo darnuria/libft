@@ -6,7 +6,7 @@
 #    By: aviala <aviala@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/20 18:47:54 by aviala            #+#    #+#              #
-#    Updated: 2013/12/08 23:33:37 by aviala           ###   ########.fr        #
+#    Updated: 2013/12/08 23:37:08 by aviala           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -56,7 +56,7 @@ OBJS_PREF = $(addprefix $(OBJDIR)/, $(OBJS))
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS_PREF)
 	ar rcs $@ $(OBJS_PREF)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
