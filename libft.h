@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/19 16:07:32 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/02 07:17:05 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/07 17:47:36 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,9 +85,9 @@ char	*ft_strtrim(const char *s);
 */
 
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t));
-void	ft_lstadd(t_list **alst, t_list *p_new);
-void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
+void	ft_lstdel(t_list **lst, void (*del)(void *, size_t));
+void	ft_lstadd(t_list **lst, t_list *p_new);
+void	ft_lstdelone(t_list **lst, void (*del)(void *, size_t));
 t_list*	ft_lstnew(void const *data, size_t data_size);
 t_list	*ft_lst_push_back(const t_list *lst, const void *data,
 							const size_t data_size);
