@@ -6,14 +6,14 @@
 #    By: aviala <aviala@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/20 18:47:54 by aviala            #+#    #+#              #
-#    Updated: 2013/12/07 18:33:40 by aviala           ###   ########.fr        #
+#    Updated: 2013/12/08 23:33:37 by aviala           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 DEBUG =
-INCDIR = .
-SRCDIR = .
-OBJDIR = .
+INCDIR = includes
+SRCDIR = srcs
+OBJDIR = objs
 CC = cc
 LD = $(CC)
 GCCVERSION = $(shell $(CC) --version | grep ^$(CC) | sed 's/^.* //g')
