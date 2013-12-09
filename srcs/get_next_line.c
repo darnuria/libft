@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/05 12:22:24 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/09 17:59:44 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/09 20:21:22 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,26 @@ static void	ft_work(char **line, char **tmp, char **rem , size_t len_to_endl)
 	ft_strdel(line);
 	*line = ft_strsub(*rem, 0, len_to_endl);
 	*tmp = ft_strsub(*rem, len_to_endl + 1, ft_strlen(*rem) - len_to_endl);
+}
+
+static int	ft_endl(char **line, char *buff, ssize_t c_read)
+{
+	if (c_read < BUFF_SIZE)
+	{
+		*line = ft_strdup(buff);
+		ft_strdel(&buff);
+		return (0);
+	}
+	else if (c_read == -1)
+	{
+		ft_strdel(&buff);
+		return (-1);
+	}
+	else
+	{
+		ft_strdel(&buff);
+		return (0);
+	}
 }
 
 static int	ft_init(char **rem, char **buff, const int fd, ssize_t *c_read)
@@ -81,9 +101,5 @@ int		get_next_line(const int fd , char **line)
 		}
 		c_read = read(fd, buff, BUFF_SIZE);
 	}
-	ft_strdel(&buff);
-	if (c_read == -1)
-		return (-1);
-	else
-		return (0);
+	return (ft_endl(line, buff, c_read));
 }
