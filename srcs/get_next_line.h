@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/22 13:53:40 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/09 13:33:24 by aviala           ###   ########.fr       */
+/*   Created: 2013/12/05 12:22:22 by aviala            #+#    #+#             */
+/*   Updated: 2013/12/08 23:30:52 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-void	*ft_memmove(void *s1, const void *s2, size_t n)
-{
-	void	*tmp;
+# define BUFF_SIZE 128
 
-	if (s1 == NULL || s2 == NULL)
-		return (NULL);
-	if ((tmp = (void *) ft_memalloc(n)) == NULL)
-		return (NULL);
-	ft_memcpy(tmp, s2, n);
-	ft_memcpy(s1, tmp, n);
-	ft_memdel(&tmp);
-	return ((void *) s1);
-}
+# include <string.h>
+# include "libft.h"
+
+int		get_next_line(const int fd , char **line);
+
+#endif /* !GET_NEXT_LINE_H */

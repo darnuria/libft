@@ -6,13 +6,13 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/02 01:17:08 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/02 05:28:45 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/09 12:48:38 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstiter(t_list *lst, void (*f)(t_list *elem))
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
 	if (lst->next != NULL)
 	{

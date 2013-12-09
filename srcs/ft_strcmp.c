@@ -6,14 +6,14 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 13:55:26 by aviala            #+#    #+#             */
-/*   Updated: 2013/11/25 16:09:13 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/09 12:49:44 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include "libft.h"
 
-int ft_strcmp(const char *s1, const char *s2)
+int	ft_strcmp(const char *s1, const char *s2)
 {
 	size_t	i;
 
@@ -25,6 +25,6 @@ int ft_strcmp(const char *s1, const char *s2)
 			return (s1[i] - s2[i]);
 		}
 		i++;
-}
+	}
 	return (0);
 }

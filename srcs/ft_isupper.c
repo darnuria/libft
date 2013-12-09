@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/06 18:12:24 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/06 19:19:52 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/09 13:07:39 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ft_isupper(const int c)
 {
-	return (c >= 'A' && c <= 'Z');
+	return (ft_tolower(c) ? (c - 32) : c);
 }

@@ -6,14 +6,14 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 20:14:49 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/01 20:45:39 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/09 12:55:46 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include "libft.h"
 
-static int ft_istrailling(char c)
+static int	ft_istrailling(char c)
 {
 	return (c == ' ' || c == '\n' || c == '\t');
 }

@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/01 21:05:55 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/02 07:16:12 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/09 13:33:08 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_list*	ft_lstnew(void const *data, size_t data_size)
 			new_elem->data = NULL;
 		else
 		{
-			if ((new_elem->data = ft_memalloc(data_size)) != NULL)
+			if ((new_elem->data = (void *) ft_memalloc(data_size)) != NULL)
 				ft_memcpy(new_elem->data, data, data_size);
 			else
 				free(new_elem);
