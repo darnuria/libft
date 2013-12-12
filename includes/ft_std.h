@@ -1,5 +1,5 @@
-#ifndef H_FT_STD
-# define H_FT_STD
+#ifndef FT_STD_H
+# define FT_STD_H
 /*
 ** Successful exit status.
 */
@@ -12,6 +12,6 @@
 */
 # ifndef EXIT_FAILURE
 #  define EXIT_FAILURE 1
-# endif /* !EXIT_FAILURE
+# endif /* !EXIT_FAILURE */
 
-#endif /* !H_FT_STD */
+#endif /* !FT_STD_H */
