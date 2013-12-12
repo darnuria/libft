@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/19 16:07:32 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/10 11:51:35 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/12 21:19:00 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct	s_list
 int		ft_isalnum(const int c);
 int		ft_isalpha(const int c);
 int		ft_isascii(const int c);
-int 	ft_isdigit(const int c);
+int		ft_isdigit(const int c);
 int		ft_isprint(const int c);
 int		ft_isspace(const int c);
 int		ft_isupper(const int c);
