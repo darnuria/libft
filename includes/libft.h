@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/19 16:07:32 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/07 17:47:36 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/10 11:51:35 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,14 @@ void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
-void	ft_putchar(char c);
-void	ft_putchar_fd(char c, int fd);
+size_t	ft_putchar(char c);
+size_t	ft_putchar_fd(char c, int fd);
 void	ft_putendl(const char *s);
 void	ft_putendl_fd(char const *s, int fd);
-void	ft_putnbr(int n);
-void	ft_putnbr_fd(int n, int fd);
-void	ft_putstr(char const *s);
-void	ft_putstr_fd(char const *s, int fd);
+size_t	ft_putnbr(int n);
+size_t	ft_putnbr_fd(int n, int fd);
+size_t	ft_putstr(char const *s);
+size_t	ft_putstr_fd(char const *s, int fd);
 char	*ft_itoa(int n);
 int		ft_atoi(const char *nptr);
 int		ft_tolower(const int c);

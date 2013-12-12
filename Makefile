@@ -10,7 +10,7 @@
 #                                                                              #
 #******************************************************************************#
 
-DEBUG =
+DEBUG = yes
 INCDIR = includes
 SRCDIR = srcs
 OBJDIR = objs
@@ -18,7 +18,7 @@ CC = cc
 LD = $(CC)
 GCCVERSION = $(shell $(CC) --version | grep ^$(CC) | sed 's/^.* //g')
 ifeq ($(DEBUG),yes)
-	CC = cc
+	CC = clang
 	CFLAGS = -fstack-protector-all -ansi -Wshadow -Wall -Werror -Wextra \
 		 -Wunreachable-code -Wstack-protector -pedantic-errors \
 		 -Wfatal-errors -Wstrict-prototypes -Wmissing-prototypes \

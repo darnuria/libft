@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 20:29:08 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/01 20:54:18 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/10 11:47:34 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <string.h>
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+size_t	ft_putstr(char const *s)
 {
-	ft_putstr_fd(s, 1);
+	return (ft_putstr_fd(s, 1));
 }
