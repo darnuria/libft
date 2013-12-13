@@ -14,4 +14,14 @@
 #  define EXIT_FAILURE 1
 # endif /* !EXIT_FAILURE */
 
+# ifndef FALSE
+#  define FALSE 0
+# endif /* !FALSE */
+
+# ifndef TRUE
+#  define TRUE 0
+# endif /* !TRUE */
+
+typedef unsigned char t_bool;
+
 #endif /* !FT_STD_H */

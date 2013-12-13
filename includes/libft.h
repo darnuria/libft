@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/19 16:07:32 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/12 21:19:00 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/13 05:05:05 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,9 @@ void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void	ft_lstdel(t_list **lst, void (*del)(void *, size_t));
 void	ft_lstadd(t_list **lst, t_list *p_new);
 void	ft_lstdelone(t_list **lst, void (*del)(void *, size_t));
+void	ft_swaplst(t_list *a, t_list *b);
+void	ft_lstbubblesort(t_list *lst, int (*f)(const t_list *, const t_list *));
+size_t	ft_lstlen(const t_list *lst);
 t_list*	ft_lstnew(void const *data, size_t data_size);
 t_list	*ft_lst_push_back(const t_list *lst, const void *data,
 							const size_t data_size);

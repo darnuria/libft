@@ -6,7 +6,7 @@
 #    By: aviala <aviala@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/20 18:47:54 by aviala            #+#    #+#              #
-#    Updated: 2013/12/09 17:54:47 by aviala           ###   ########.fr        #
+#    Updated: 2013/12/13 05:06:19 by aviala           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -51,7 +51,7 @@ SRC = 	ft_strlen.c		ft_isalnum.c	ft_isalpha.c	ft_isascii.c \
 		ft_strrev.c		ft_swapchar.c	ft_lstnew.c		ft_lstdelone.c \
 		ft_lstadd.c		ft_lstdel.c		ft_lstiter.c	ft_isspace.c \
 		ft_islower.c	ft_isupper.c	ft_lst_push_front.c ft_lst_push_back.c \
-		get_next_line.c
+		get_next_line.c	ft_lstsort.c	ft_lstlen.c
 #ft_lstmap.c
 OBJS = $(SRC:.c=.o)
 NAME = libft.a

@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_push_front.c                                :+:      :+:    :+:   */
+/*   ft_lstlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/12/02 06:57:48 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/13 03:20:57 by aviala           ###   ########.fr       */
+/*   Created: 2013/12/13 05:01:37 by aviala            #+#    #+#             */
+/*   Updated: 2013/12/13 05:04:44 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lst_push_front(const t_list *b_lst,
-							const void *data,
-							const size_t data_size)
+size_t	ft_lstlen(const t_list *lst)
 {
-	t_list	*b_head;
+	t_list	*tmp;
+	size_t	i;
 
-	if ((b_head = ft_lstnew(data, data_size)) != NULL)
-	{
-		b_head->next = (t_list *) b_lst;
-	}
-	return (b_head);
+	i = 0;
+	while ((tmp = lst->next) != NULL)
+		i++;
+	return (i);
 }
