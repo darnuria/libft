@@ -5,19 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/12/05 12:22:22 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/08 23:30:52 by aviala           ###   ########.fr       */
+/*   Created: 2013/12/15 23:02:21 by aviala            #+#    #+#             */
+/*   Updated: 2013/12/15 23:02:25 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# define BUFF_SIZE 128
+# define BUFF_SIZE 4096
 
-# include <string.h>
-# include "libft.h"
+int					get_next_line(int const fd, char **line);
 
-int		get_next_line(const int fd , char **line);
+typedef struct		s_read
+{
+	int				size;
+	int				index;
+	int				fd;
+	char			*read;
+	struct s_read	*next;
+}					t_read;
 
 #endif /* !GET_NEXT_LINE_H */

@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/13 03:57:47 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/13 06:16:36 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/13 19:08:21 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 #include "ft_std.h"
 #include "stdlib.h"
 
-static t_list	ft_getprev(t_list head, t_list a)
+static t_list	*ft_getprev(t_list *head, t_list *a)
 {
 	t_list	*tmp;
-	t_list	pre_a;
+	t_list	*pre_a;
 
 	if (head == a)
 		return (NULL);
@@ -30,8 +30,7 @@ static t_list	ft_getprev(t_list head, t_list a)
 	}
 	if (tmp != a)
 	{
-		printf("Fail in ft_swaplst(ft_getprev) free memory and exit.\n");
-		ft_lstdel(&head);
+		ft_putstr("Fail in ft_swaplst(ft_getprev) free memory and exit.\n");
 		exit(EXIT_FAILURE);
 	}
 	return (pre_a);
@@ -69,10 +68,10 @@ void			ft_lstbubblesort(t_list *lst,
 	size_t	i;
 	size_t	j;
 	size_t	len;
-	t_list	cur;
+	t_list	*cur;
+
 	i = 0;
 	j = 0;
-
 	cur = lst;
 	len = ft_lstlen(lst);
 	while (i < len)
@@ -82,7 +81,7 @@ void			ft_lstbubblesort(t_list *lst,
 		{
 			if (f(lst, lst->next))
 			{
-				ft_swaplst(lst, lst->next);
+				ft_swaplst(&lst, &cur, &(cur->next));
 				swapped = TRUE;
 			}
 			cur = cur->next;

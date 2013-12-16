@@ -5,101 +5,138 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/12/05 12:22:24 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/09 20:21:22 by aviala           ###   ########.fr       */
+/*   Created: 2013/12/15 23:02:04 by aviala            #+#    #+#             */
+/*   Updated: 2013/12/16 18:27:21 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include <sys/types.h>
-#include <sys/uio.h>
 #include <unistd.h>
+#include <stdlib.h>
+#include <string.h>
 
-#include "libft.h"
+#include "ft_string.h"
 #include "get_next_line.h"
 
-static int	ft_end(ssize_t c_read, char **tmp, char **rem)
+static t_read		*ft_freeread(t_read *red, t_read *prev, t_read **start)
 {
-	if (c_read == 0)
-	{
-		*rem = NULL;
-		return (0);
-	}
-	else if (c_read == -1)
-		return (0);
+	if (!prev)
+		*start = red->next;
 	else
-	{
-		*rem = *tmp;
-		return (1);
-	}
+		prev->next = red->next;
+	free(red->read);
+	free(red);
+	if (!prev)
+		return (*start);
+	else
+		return (prev->next);
 }
 
-static void	ft_work(char **line, char **tmp, char **rem , size_t len_to_endl)
+static t_read		*ft_newread(int fd)
 {
-	ft_strdel(line);
-	*line = ft_strsub(*rem, 0, len_to_endl);
-	*tmp = ft_strsub(*rem, len_to_endl + 1, ft_strlen(*rem) - len_to_endl);
+	t_read			*red;
+	char			*tmp;
+	int				ret;
+
+	if (!(red = (t_read *)malloc(sizeof(t_read))))
+		return (NULL);
+	if (!(tmp = malloc(sizeof(char) * BUFF_SIZE)))
+	{
+		free(red);
+		return (NULL);
+	}
+	if ((ret = read(fd, tmp, BUFF_SIZE)) < 0)
+	{
+		free(red);
+		free(tmp);
+		return (NULL);
+	}
+	tmp[ret] = 0;
+	red->read = (char *)tmp;
+	red->fd = fd;
+	red->size = ret;
+	red->next = NULL;
+	red->index = 0;
+	return (red);
 }
 
-static int	ft_endl(char **line, char *buff, ssize_t c_read)
+static int			ft_print(int n, t_read **tab, t_read **s, char** l)
 {
-	if (c_read < BUFF_SIZE)
-	{
-		*line = ft_strdup(buff);
-		ft_strdel(&buff);
-		return (0);
-	}
-	else if (c_read == -1)
-	{
-		ft_strdel(&buff);
+	char			*tmpstr;
+	int				index;
+
+	if (!tab[0])
 		return (-1);
-	}
-	else
+	index = (tab[0])->index;
+	if (n == -1 || !(tmpstr = (char *)malloc(sizeof (char) * (n + 1))))
+		return (-1);
+	*l = tmpstr;
+	while (n--)
 	{
-		ft_strdel(&buff);
-		return (0);
+		*tmpstr++ = (tab[0])->read[index++];
+		if (index == (tab[0])->size)
+		{
+			tab[0] = ft_freeread(tab[0], tab[1], s);
+			index = 0;
+		}
 	}
+	*tmpstr = 0;
+	if (!tab[0] || (index == tab[0]->size && tab[0]->size < BUFF_SIZE))
+		return (0);
+	tab[0]->index = index + 1;
+	if (tab[0]->index == tab[0]->size)
+		tab[0] = ft_freeread(tab[0], tab[1], s);
+	return (1);
+}
+#include <stdio.h>
+static int			ft_findendl(int fd, t_read *red)
+{
+	int				index;
+	int				size;
+	t_read			*tmplst;
+
+	size = 0;
+	index = red->index;
+	while (red->read[index] != '\n' && index < red->size)
+	{
+		index++;
+		size++;
+		if (index == red->size && red->size == BUFF_SIZE)
+		{
+			if (!(tmplst = ft_newread(fd)))
+				return (-1);
+			tmplst->next = red->next;
+			red->next = tmplst;
+			red = tmplst;
+			index = 0;
+		}
+	}
+		return (size);
 }
 
-static int	ft_init(char **rem, char **buff, const int fd, ssize_t *c_read)
+int					get_next_line(int fd, char **line)
 {
-	*c_read = 1;
+	static t_read	*start = NULL;
+	t_read			*red;
+	t_read			*prevtmp;
+	t_read			*tab[2];
+
 	if (fd < 0)
 		return (-1);
-	if (*rem == NULL)
+	prevtmp = NULL;
+	if (!start)
+		start = ft_newread(fd);
+	red = start;
+	while (red->fd != fd)
 	{
-		if ((*rem = ft_strnew(1)) == NULL)
-			return (-1);
+		if (!(red->next))
+			red->next = ft_newread(fd);
+		prevtmp = red;
+		red = red->next;
 	}
-	if ((*buff = ft_strnew(BUFF_SIZE)) == NULL)
-	{
-		ft_strdel(rem);
+	if (!red || !start)
 		return (-1);
-	}
-	return (0);
-}
-
-int		get_next_line(const int fd , char **line)
-{
-	static char	*rem = NULL;
-	char		*pos_endl;
-	char		*buff;
-	ssize_t		c_read;
-	char		*tmp;
-
-	if (ft_init(&rem, &buff, fd, &c_read) == -1)
-		return (-1);
-	while (c_read > 0)
-	{
-		tmp = ft_strjoin(rem, (const char *) buff);
-		ft_strdel(&rem);
-		rem = tmp;
-		if ((pos_endl = ft_strchr(rem, '\n')) != NULL)
-		{
-			ft_work(line, &tmp, &rem, (size_t) (pos_endl - rem));
-			return (ft_end(c_read, &tmp, &rem));
-		}
-		c_read = read(fd, buff, BUFF_SIZE);
-	}
-	return (ft_endl(line, buff, c_read));
+	tab[0] = red;
+	tab[1] = prevtmp;
+	return (ft_print(ft_findendl(fd, red), tab, &start, line));
 }
