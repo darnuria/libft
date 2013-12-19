@@ -1,19 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_pow.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/23 20:28:01 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/19 03:20:46 by aviala           ###   ########.fr       */
+/*   Created: 2013/12/18 17:34:06 by aviala            #+#    #+#             */
+/*   Updated: 2013/12/19 03:11:39 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include "libft.h"
+#include "ft_math.h"
 
-size_t	ft_putchar(char c)
+long double	ft_pow(long double x, long int n)
 {
-	return (ft_putchar_fd(c, 1));
+	long double	temp;
+
+	if (n == 0)
+		return (1);
+	temp = ft_pow(x, n / 2);
+	if (n % 2 == 0)
+		return (temp * temp);
+	else
+	{
+		if (n > 0)
+			return (x * temp *temp);
+		else
+			return (temp * temp / x);
+	}
 }

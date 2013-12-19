@@ -14,7 +14,7 @@
 # define LIBFT_H
 
 # include <string.h>
-# include "ft_std.h"
+# include "types.h"
 
 typedef struct	s_list
 {
@@ -89,9 +89,6 @@ void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void	ft_lstdel(t_list **lst, void (*del)(void *, size_t));
 void	ft_lstadd(t_list **lst, t_list *p_new);
 void	ft_lstdelone(t_list **lst, void (*del)(void *, size_t));
-void	ft_swaplst(t_list **head ,t_list **a, t_list **b);
-void	ft_lstbubblesort(t_list *lst,
-						t_bool (*f)(const t_list *, const t_list *));
 size_t	ft_lstlen(const t_list *lst);
 t_list*	ft_lstnew(void const *data, size_t data_size);
 t_list	*ft_lst_push_back(const t_list *lst, const void *data,

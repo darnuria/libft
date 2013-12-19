@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/23 20:28:01 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/19 03:20:46 by aviala           ###   ########.fr       */
+/*   Created: 2013/12/18 18:25:39 by aviala            #+#    #+#             */
+/*   Updated: 2013/12/18 22:57:36 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include "libft.h"
+#include "ft_math.h"
 
-size_t	ft_putchar(char c)
+/*
+** unsigned long	ft_abs(long int x)
+** @param	x	:
+** @return	y	:
+** Return Absolute value of x.
+** exemple :
+*/
+
+unsigned long	ft_abs(long int x)
 {
-	return (ft_putchar_fd(c, 1));
+	if (x < 0)
+		return (-x);
+	else
+		return (x);
 }

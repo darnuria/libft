@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_TYPES_H
-# define FT_TYPES_H
+# ifndef FT_TYPES_H
+#  define FT_TYPES_H
 
 /*
 ** Successful exit status.
@@ -37,8 +37,55 @@
 #  define TRUE 0
 # endif /* !TRUE */
 
-typedef unsigned char	t_bool;
-typedef unsigned int	t_uint32;
-typedef unsigned char	t_uchar;
+/*
+** 7.18.1.1 Exact-width integer types
+*/
+
+# ifndef T_INT8
+#  define T_INT8
+typedef signed char			t_int8;
+# endif /* !T_INT8 */
+
+# ifndef T_INT16
+#  define T_INT16
+typedef short				t_int16;
+# endif /* !T_INT16 */
+
+# ifndef T_INT32
+#  define T_INT32
+typedef int					t_int32;
+# endif /* !T_INT32 */
+
+/*
+** # ifndef T_INT64
+** #  define T_INT64
+** typedef long long			t_int64;
+** # endif
+*/
+
+# ifndef T_UINT8
+#  define T_UINT8
+typedef unsigned char		t_uint8;
+# endif /* !T_UINT8 */
+
+# ifndef T_INT16
+#  define T_INT16
+typedef unsigned short		t_int16;
+# endif /* !T_INT16 */
+
+# ifndef  T_INT32
+#  define  T_INT32
+typedef unsigned int		t_uint32;
+# endif /* !T_INT32 */
+
+/*
+** # ifndef T_INT64
+** #  define T_INT64
+** typedef unsigned long long	t_int64;
+** # endif
+*/
+typedef unsigned char		t_bool;
+typedef unsigned int		t_uint32;
+typedef unsigned char		t_uchar;
 
 #endif /* !FT_TYPES_H */

@@ -15,7 +15,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "ft_string.h"
+#include "libft.h"
 #include "get_next_line.h"
 
 static t_read		*ft_freeread(t_read *red, t_read *prev, t_read **start)
