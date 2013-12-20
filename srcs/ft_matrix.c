@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_matrix.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
+/*   By: darnuria <darnuria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/19 04:01:13 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/19 07:47:03 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/19 22:21:56 by darnuria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,21 @@
 #include <string.h>
 #include <stdlib.h>
 
-t_mat_ld	*ft_matrix_ld_transpose(t_mat_ld *m)
-{
-	size_t		i;
-	size_t		j;
-	t_mat_ld	*new_m;
 
-	new_m = ft_matrix(m->columns, m->rows, 0);
+
+void	ft_matrix_ld_set_identity(t_mat_ld *m)
+{
+	size_t	i;
+	size_t	j;
+
 	i = 0;
 	j = 0;
-	while (i < m->columns)
+	while (i < m->columns && j < m->rows)
 	{
-		j = 0;
-		while (j < m->rows)
-		{
-			i = 0;
-			new_m->mat[j][i] = m->mat[i][j];
-			i++;
-		}
+		m->mat[i][j] = 1;
 		j++;
+		i++;
 	}
-	return (new_m);
 }
 
 void	ft_matrix_ld_set_all(t_mat_ld *m, const long double c)

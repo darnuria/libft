@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_math_matrix.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
+/*   By: darnuria <darnuria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/19 07:16:31 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/19 07:53:55 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/19 22:21:17 by darnuria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,29 @@ t_mat_ld	*ft_matrix_ld_add(const t_mat_ld *m1, const t_mat_ld *m2)
 			}
 			i++;
 		}
+	}
+	return (new_m);
+}
+
+t_mat_ld	*ft_matrix_ld_transpose(t_mat_ld *m)
+{
+	size_t		i;
+	size_t		j;
+	t_mat_ld	*new_m;
+
+	new_m = ft_matrix(m->columns, m->rows, 0);
+	i = 0;
+	j = 0;
+	while (i < m->columns)
+	{
+		j = 0;
+		while (j < m->rows)
+		{
+			i = 0;
+			new_m->mat[j][i] = m->mat[i][j];
+			i++;
+		}
+		j++;
 	}
 	return (new_m);
 }
