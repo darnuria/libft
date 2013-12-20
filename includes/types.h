@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_std.h                                           :+:      :+:    :+:   */
+/*   types.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/16 18:28:37 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/16 18:28:43 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/20 16:30:09 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,15 +68,15 @@ typedef int					t_int32;
 typedef unsigned char		t_uint8;
 # endif /* !T_UINT8 */
 
-# ifndef T_INT16
-#  define T_INT16
-typedef unsigned short		t_int16;
-# endif /* !T_INT16 */
+# ifndef T_UINT16
+#  define T_UINT16
+typedef unsigned short		t_uint16;
+# endif /* !T_UINT16 */
 
-# ifndef  T_INT32
-#  define  T_INT32
-typedef unsigned int		t_uint32;
-# endif /* !T_INT32 */
+# ifndef  T_UINT32
+#  define  T_UINT32
+typedef unsigned int		t_uint32_;
+# endif /* !T_UINT32 */
 
 /*
 ** # ifndef T_INT64
@@ -84,8 +84,10 @@ typedef unsigned int		t_uint32;
 ** typedef unsigned long long	t_int64;
 ** # endif
 */
+
 typedef unsigned char		t_bool;
 typedef unsigned int		t_uint32;
 typedef unsigned char		t_uchar;
+typedef	long int			t_lint;
 
 #endif /* !FT_TYPES_H */

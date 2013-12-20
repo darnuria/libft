@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/19 16:07:32 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/13 06:11:18 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/20 16:29:55 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void	ft_lstdel(t_list **lst, void (*del)(void *, size_t));
 void	ft_lstadd(t_list **lst, t_list *p_new);
 void	ft_lstdelone(t_list **lst, void (*del)(void *, size_t));
 size_t	ft_lstlen(const t_list *lst);
-t_list*	ft_lstnew(void const *data, size_t data_size);
+t_list	*ft_lstnew(void const *data, size_t data_size);
 t_list	*ft_lst_push_back(const t_list *lst, const void *data,
 							const size_t data_size);
 t_list	*ft_lst_push_front(const t_list *b_lst, const void *data,
@@ -101,6 +101,7 @@ t_list	*ft_lst_push_front(const t_list *b_lst, const void *data,
 */
 
 void	ft_swapchar(char *a, char *b);
+void	ft_swapint(int *a, int *b);
 char	*ft_strrev(char *str);
 
 #endif /* !LIBFT_H */
