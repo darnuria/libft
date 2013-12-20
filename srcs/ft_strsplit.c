@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 13:55:40 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/19 03:19:04 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/20 20:40:57 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,6 @@ static size_t	ft_gety(const char *s, const char sep)
 		}
 	}
 	return (y);
-}
-
-static size_t	ft_strpos(const char *s, const char c)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i] != c && s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
 }
 
 static char		**ft_strnew2d(size_t len)

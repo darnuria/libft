@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/19 16:07:32 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/20 16:29:55 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/20 20:55:56 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ char	*ft_strcpy(char *s1, const char *s2);
 char	*ft_strncpy(char *s1, const char *s2, size_t n);
 char	*ft_strdup(const char *s1);
 char	**ft_strsplit(const char *s, const char c);
+t_list	*ft_strsplit_lst(const char *s, const char c);
 char	*ft_strcat(char *s1, const char *s2);
 char	*ft_strncat(char *s1, const char *s2, size_t n);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
@@ -70,6 +71,7 @@ char	*ft_strjoin(const char *s1, const char *s2);
 char	*ft_strnjoin(const char *s1, const char *s2,
 					const size_t n1, const size_t n2);
 size_t	ft_strlen(const char *s);
+size_t	ft_strpos(const char *s, const char c);
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_strequ(const char *s1, const char *s2);
