@@ -53,7 +53,8 @@ SRC =	ft_strlen.c	ft_isalnum.c	ft_isalpha.c	ft_isascii.c \
 	ft_islower.c	ft_isupper.c	ft_lstlen.c		ft_lst_push_back.c \
 	ft_sqrt.c		get_next_line.c	ft_pow.c		ft_lst_push_front.c \
 	ft_cos.c		ft_sin.c		ft_abs.c		ft_factorial.c \
-	ft_matrix.c		ft_swapint.c					ft_math_matrix.c
+	ft_matrix.c		ft_swapint.c	ft_ceil.c		ft_math_matrix.c \
+	ft_floor.c
 
 #ft_lstmap.c
 OBJS = $(SRC:.c=.o)

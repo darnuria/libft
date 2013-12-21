@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/18 16:24:18 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/19 07:32:03 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/21 14:56:13 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ unsigned long	ft_abs(long int x);
 float			ft_ceilf(float f);
 double			ft_ceil(double d);
 double long		ft_ceill(double long dl);
+
 float			ft_floorf(float f);
 double			ft_floor(double d);
 double long		ft_floorl(double long dl);
