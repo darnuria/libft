@@ -1,41 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit_lst.c                                  :+:      :+:    :+:   */
+/*   ft_countc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/12/20 20:37:33 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/20 20:55:19 by aviala           ###   ########.fr       */
+/*   Created: 2013/12/22 02:21:53 by aviala            #+#    #+#             */
+/*   Updated: 2013/12/22 02:27:00 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
+#include <string.h>
 
-t_list	*ft_strsplit_lst(const char *s, const char c)
+size_t	ft_countnc(const char *s, const char c, size_t n)
 {
-	t_list	*dest;
-	size_t	y;
-	size_t	x;
-	size_t	pos;
 	size_t	i;
 
 	i = 0;
-	x = 0;
-	while (i)
+	while (*s != '\0' && n)
 	{
-		while (s[x] == c)
-			x++;
-		pos = ft_strpos(&s[x], c);
-		if (i == 0)
-			dest = ft_listnew(ft_strsub(s, x, pos), pos - x);
-		else
-			dest = ft_lst_push_front(dest, ft_strsub(s, x, pos), pos - x));
-		x += pos;
-		i++;
+		if (*s == c)
+			i++;
+		s++;
+		n--;
 	}
-	return (dest);
-}
-
+	return (i);
 }

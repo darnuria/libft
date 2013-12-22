@@ -1,26 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_max.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/22 14:01:37 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/22 10:01:14 by aviala           ###   ########.fr       */
+/*   Created: 2013/12/21 15:21:57 by aviala            #+#    #+#             */
+/*   Updated: 2013/12/21 15:22:07 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include "libft.h"
-
-int	ft_atoi(const char *s)
-{
-	int	num;
-	int	sign;
-
-	while (!(num = 0) && ft_isspace(*s) && (++s));
-	sign = (*s == '-') ? -1 : 1;
-	s = (*s == '-' || *s == '+') ? s + 1 : s;
-	while (ft_isdigit(*s) && ((num *= 10) || !num) && (num += *s++ - '0'));
-	return (sign * num);
-}
+#include "ft_math.h"

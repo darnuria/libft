@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_open.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/22 14:01:37 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/22 10:01:14 by aviala           ###   ########.fr       */
+/*   Created: 2013/12/21 15:42:57 by aviala            #+#    #+#             */
+/*   Updated: 2013/12/21 16:55:00 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <fcntl.h>
 #include "libft.h"
 
-int	ft_atoi(const char *s)
+int	ft_open(const char *filename)
 {
-	int	num;
-	int	sign;
+	int	fd;
 
-	while (!(num = 0) && ft_isspace(*s) && (++s));
-	sign = (*s == '-') ? -1 : 1;
-	s = (*s == '-' || *s == '+') ? s + 1 : s;
-	while (ft_isdigit(*s) && ((num *= 10) || !num) && (num += *s++ - '0'));
-	return (sign * num);
+	if ((fd = open(filename, O_RDONLY)) > 0)
+		return (fd);
+	ft_putstr("Open Error : abort incorrect file descriptor.\n");
+	return (-1);
 }

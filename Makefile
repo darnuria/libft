@@ -6,7 +6,7 @@
 #    By: aviala <aviala@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/20 18:47:54 by aviala            #+#    #+#              #
-#    Updated: 2013/12/19 07:29:33 by aviala           ###   ########.fr        #
+#    Updated: 2013/12/22 01:21:54 by aviala           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -53,8 +53,8 @@ SRC =	ft_strlen.c	ft_isalnum.c	ft_isalpha.c	ft_isascii.c \
 	ft_islower.c	ft_isupper.c	ft_lstlen.c		ft_lst_push_back.c \
 	ft_sqrt.c		get_next_line.c	ft_pow.c		ft_lst_push_front.c \
 	ft_cos.c		ft_sin.c		ft_abs.c		ft_factorial.c \
-	ft_matrix.c		ft_swapint.c	ft_ceil.c		ft_math_matrix.c \
-	ft_floor.c
+	ft_swapint.c	ft_ceil.c		ft_floor.c		ft_open.c \
+	get_next_line.c ft_strpos.c		ft_countc.c
 
 #ft_lstmap.c
 OBJS = $(SRC:.c=.o)

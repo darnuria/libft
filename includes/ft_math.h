@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/18 16:24:18 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/21 14:56:13 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/21 15:25:04 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@
 # ifndef K_DEGREE
 #  define K_DEGREE 8
 # endif /* !K_DEGREE */
+
+# define MAX(a, b) (((a) > (b)) ? (a) : (b))
+# define MIN(a, b) (((a) < (b)) ? (a) : (b))
 
 /*
 ** Undefined behaviour above n > 21.

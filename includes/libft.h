@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/19 16:07:32 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/20 20:55:56 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/22 11:43:50 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ char	*ft_strcpy(char *s1, const char *s2);
 char	*ft_strncpy(char *s1, const char *s2, size_t n);
 char	*ft_strdup(const char *s1);
 char	**ft_strsplit(const char *s, const char c);
-t_list	*ft_strsplit_lst(const char *s, const char c);
 char	*ft_strcat(char *s1, const char *s2);
 char	*ft_strncat(char *s1, const char *s2, size_t n);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
@@ -82,6 +81,13 @@ char	*ft_strstr(const char *s1, const char *s2);
 char	*ft_strnstr(const char *s1, const char *s2, size_t n);
 char	*ft_strsub(const char *s, unsigned int start, size_t len);
 char	*ft_strtrim(const char *s);
+size_t	ft_countnc(const char *s, const char c, size_t n);
+
+/*
+** Files
+*/
+
+int	ft_open(const char *filename);
 
 /*
 ** List

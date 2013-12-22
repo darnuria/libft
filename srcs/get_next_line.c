@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/15 23:02:04 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/16 18:27:21 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/22 02:33:14 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 #include "libft.h"
 #include "get_next_line.h"
 
-static t_read		*ft_freeread(t_read *red, t_read *prev, t_read **start)
+
+static	t_read		*ft_freeread(t_read *red, t_read *prev, t_read **start)
 {
 	if (!prev)
 		*start = red->next;
@@ -32,7 +33,7 @@ static t_read		*ft_freeread(t_read *red, t_read *prev, t_read **start)
 		return (prev->next);
 }
 
-static t_read		*ft_newread(int fd)
+static	t_read		*ft_newread(int fd)
 {
 	t_read			*red;
 	char			*tmp;
@@ -40,7 +41,7 @@ static t_read		*ft_newread(int fd)
 
 	if (!(red = (t_read *)malloc(sizeof(t_read))))
 		return (NULL);
-	if (!(tmp = malloc(sizeof(char) * BUFF_SIZE)))
+	if (!(tmp = (char *) malloc(sizeof(char) * BUFF_SIZE)))
 	{
 		free(red);
 		return (NULL);
@@ -51,7 +52,6 @@ static t_read		*ft_newread(int fd)
 		free(tmp);
 		return (NULL);
 	}
-	tmp[ret] = 0;
 	red->read = (char *)tmp;
 	red->fd = fd;
 	red->size = ret;
@@ -60,7 +60,7 @@ static t_read		*ft_newread(int fd)
 	return (red);
 }
 
-static int			ft_print(int n, t_read **tab, t_read **s, char** l)
+static	int			ft_print(int n, t_read **tab, t_read **s, char** l)
 {
 	char			*tmpstr;
 	int				index;
@@ -88,8 +88,8 @@ static int			ft_print(int n, t_read **tab, t_read **s, char** l)
 		tab[0] = ft_freeread(tab[0], tab[1], s);
 	return (1);
 }
-#include <stdio.h>
-static int			ft_findendl(int fd, t_read *red)
+
+static	int			ft_findendl(int fd, t_read *red)
 {
 	int				index;
 	int				size;
@@ -111,7 +111,7 @@ static int			ft_findendl(int fd, t_read *red)
 			index = 0;
 		}
 	}
-		return (size);
+	return (size);
 }
 
 int					get_next_line(int fd, char **line)
@@ -140,3 +140,5 @@ int					get_next_line(int fd, char **line)
 	tab[1] = prevtmp;
 	return (ft_print(ft_findendl(fd, red), tab, &start, line));
 }
+
+

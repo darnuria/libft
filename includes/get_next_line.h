@@ -6,12 +6,14 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/15 23:02:21 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/15 23:02:25 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/22 02:31:54 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
+
+# include <stdlib.h>
 
 # define BUFF_SIZE 4096
 
