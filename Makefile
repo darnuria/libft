@@ -6,11 +6,11 @@
 #    By: aviala <aviala@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/20 18:47:54 by aviala            #+#    #+#              #
-#    Updated: 2013/12/22 01:21:54 by aviala           ###   ########.fr        #
+#    Updated: 2013/12/22 11:52:19 by aviala           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
-DEBUG = yes
+DEBUG =
 INCDIR = includes
 SRCDIR = srcs
 OBJDIR = objs

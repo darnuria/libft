@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/15 23:02:04 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/22 02:33:14 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/22 11:50:07 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,5 +140,3 @@ int					get_next_line(int fd, char **line)
 	tab[1] = prevtmp;
 	return (ft_print(ft_findendl(fd, red), tab, &start, line));
 }
-
-
