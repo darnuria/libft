@@ -42,7 +42,7 @@ static long double	ft_taylors_sin(long double x)
 	return (sum);
 }
 
-longdouble			ft_sin(longdouble x)
+long double			ft_sin(long double x)
 {
 	int			sign;
 
