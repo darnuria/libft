@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/19 16:07:32 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/22 11:43:50 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/31 10:56:08 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,11 @@
 # define LIBFT_H
 
 # include <string.h>
+# include <sys/stat.h>
 # include "types.h"
+
+# define E_OPEN_W " Error : Open in write mode incorrect file descriptor."
+# define E_OPEN_R " Error : Open in read mode incorrect file descriptor."
 
 typedef struct	s_list
 {
@@ -87,7 +91,8 @@ size_t	ft_countnc(const char *s, const char c, size_t n);
 ** Files
 */
 
-int	ft_open(const char *filename);
+int		ft_open_R(const char *filename, const int flags);
+int		ft_open_W(const char *filename, const int flags, const mode_t mode);
 
 /*
 ** List

@@ -16,22 +16,20 @@ SRCDIR = srcs
 OBJDIR = objs
 CC = cc
 LD = $(CC)
-GCCVERSION = $(shell $(CC) --version | grep ^$(CC) | sed 's/^.* //g')
+
 ifeq ($(DEBUG),yes)
 	CC = clang
-	CFLAGS = -fstack-protector-all -ansi -Wshadow -Wall -Werror -Wextra \
-		 -Wunreachable-code -Wstack-protector -pedantic-errors \
-		 -Wfatal-errors -Wstrict-prototypes -Wmissing-prototypes \
-		 -Wwrite-strings -Wunreachable-code -pedantic \
-		 -Wunknown-pragmas -Wdeclaration-after-statement \
-		 -Wold-style-definition -Wmissing-field-initializers \
-		 -Winline -g -W
+	CFLAGS += -ggdb3 -fstack-protector-all -Wshadow -Wunreachable-code \
+		-Wstack-protector -pedantic-errors -O0 -W -Wundef -fno-common \
+		-Wfatal-errors -Wstrict-prototypes -Wmissing-prototypes -pedantic \
+		-Wwrite-strings -Wunknown-pragmas -Wdeclaration-after-statement\
+		-Wold-style-definition -Wmissing-field-initializers -Wfloat-equal\
+		-Wpointer-arith -Wnested-externs -Wstrict-overflow=5 -fno-common\
+		-Wno-missing-field-initializers -Wswitch-default -Wswitch-enum \
+		-Wbad-function-cast -Wredundant-decls -fno-omit-frame-pointer
 else
 	CC = gcc
-	CFLAGS= -Wall -Wextra -Werror -O3
-endif
-ifeq "$(GCCVERSION)" "4.8.1"
-	CFLAGS += -Wno-unused-result
+	CFLAGS += -O3
 endif
 
 LDFLAGS =
