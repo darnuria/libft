@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/15 23:02:04 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/22 11:50:07 by aviala           ###   ########.fr       */
+/*   Updated: 2014/01/01 22:31:16 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ static	int			ft_print(int n, t_read **tab, t_read **s, char** l)
 	if (!tab[0])
 		return (-1);
 	index = (tab[0])->index;
-	if (n == -1 || !(tmpstr = (char *)malloc(sizeof (char) * (n + 1))))
+	if (n == -1 || !(tmpstr = (char *)malloc(sizeof(char) * (n + 1))))
 		return (-1);
 	*l = tmpstr;
 	while (n--)

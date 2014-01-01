@@ -6,12 +6,11 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/18 17:00:29 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/22 11:46:49 by aviala           ###   ########.fr       */
+/*   Updated: 2014/01/01 22:49:03 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
-#include "types.h"
 
 long double	ft_sqrt(unsigned long n)
 {

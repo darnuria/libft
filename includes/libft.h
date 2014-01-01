@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/19 16:07:32 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/31 10:56:08 by aviala           ###   ########.fr       */
+/*   Updated: 2013/12/31 12:12:03 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <string.h>
 # include <sys/stat.h>
-# include "types.h"
 
 # define E_OPEN_W " Error : Open in write mode incorrect file descriptor."
 # define E_OPEN_R " Error : Open in read mode incorrect file descriptor."

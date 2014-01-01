@@ -6,7 +6,7 @@
 #    By: aviala <aviala@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/20 18:47:54 by aviala            #+#    #+#              #
-#    Updated: 2013/12/22 11:52:19 by aviala           ###   ########.fr        #
+#    Updated: 2014/01/01 22:44:05 by aviala           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -52,7 +52,7 @@ SRC =	ft_strlen.c	ft_isalnum.c	ft_isalpha.c	ft_isascii.c \
 	ft_sqrt.c		get_next_line.c	ft_pow.c		ft_lst_push_front.c \
 	ft_cos.c		ft_sin.c		ft_abs.c		ft_factorial.c \
 	ft_swapint.c	ft_ceil.c		ft_floor.c		ft_open.c \
-	get_next_line.c ft_strpos.c		ft_countc.c
+	ft_strpos.c		ft_countc.c
 
 #ft_lstmap.c
 OBJS = $(SRC:.c=.o)
@@ -62,15 +62,19 @@ OBJS_PREF = $(addprefix $(OBJDIR)/, $(OBJS))
 all: $(NAME)
 
 $(NAME): $(OBJS_PREF)
+	@echo "Linking $@."
 	@ar rcs $@ $^
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
+	@echo "Compiling $@ into $<"
 	@$(CC) $(CFLAGS) -I$(INCDIR) -o $@ -c $<
 
 clean:
+	@echo "Removing $(OBJS_PREF)."
 	@/bin/rm -rf $(OBJS_PREF)
 
 fclean: clean
+	@echo "Removing $(NAME)."
 	@/bin/rm -f $(NAME)
 
 re: fclean all
