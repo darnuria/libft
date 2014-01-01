@@ -24,7 +24,7 @@
 ** infinite : max long double.
 */
 
-long double	ft_sin(long double x)
+static long double	ft_taylors_sin(long double x)
 {
 	unsigned long	n;
 	unsigned long	acc;
@@ -40,4 +40,23 @@ long double	ft_sin(long double x)
 		n++;
 	}
 	return (sum);
+}
+
+long double			ft_sin(long double x)
+{
+	int			sign;
+
+	sign = 1;
+	if (x < 0)
+	{
+		x *= -1;
+		sign = -1;
+	}
+	if (x == 0)
+		return (0);
+	else if (x == PI / 2)
+		return (1);
+	else if (x > PI / 2)
+		x = PI - x;
+	return (sign * ft_taylor_sin(x));
 }

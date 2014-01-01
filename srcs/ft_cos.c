@@ -23,7 +23,7 @@
 ** infinite : max long double
 */
 
-long double	ft_cos(long double x)
+static long double	ft_taylor_cos(long double x)
 {
 	unsigned long	n;
 	unsigned long	acc;
@@ -39,4 +39,23 @@ long double	ft_cos(long double x)
 		n++;
 	}
 	return (sum);
+}
+
+long double			ft_cos(long double angle)
+{
+	int			sign;
+
+	sign = 1;
+	if (angle < 0)
+		angle *= -1;
+	if (angle == 0)
+		return (1);
+	else if (angle == PI / 2)
+		return (0);
+	else if (angle > PI / 2)
+	{
+		angle = PI - angle;
+		sign = -1;
+	}
+	return (sign * ft_taylor_cos(angle));
 }
