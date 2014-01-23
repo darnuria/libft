@@ -6,7 +6,7 @@
 #    By: aviala <aviala@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/20 18:47:54 by aviala            #+#    #+#              #
-#    Updated: 2014/01/01 22:44:05 by aviala           ###   ########.fr        #
+#    Updated: 2014/01/23 21:19:06 by aviala           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -48,8 +48,8 @@ SRC =	ft_strlen.c	ft_isalnum.c	ft_isalpha.c	ft_isascii.c \
 	ft_memdel.c		ft_strsplit.c	ft_strtrim.c	ft_itoa.c \
 	ft_strrev.c		ft_swapchar.c	ft_lstnew.c		ft_lstdelone.c \
 	ft_lstadd.c		ft_lstdel.c		ft_lstiter.c	ft_isspace.c \
-	ft_islower.c	ft_isupper.c	ft_lstlen.c		ft_lst_push_back.c \
-	ft_sqrt.c		get_next_line.c	ft_pow.c		ft_lst_push_front.c \
+	ft_islower.c	ft_isupper.c	ft_lstlen.c		ft_lst_pushback.c \
+	ft_sqrt.c		get_next_line.c	ft_pow.c		ft_lst_pushfront.c \
 	ft_cos.c		ft_sin.c		ft_abs.c		ft_factorial.c \
 	ft_swapint.c	ft_ceil.c		ft_floor.c		ft_open.c \
 	ft_strpos.c		ft_countc.c

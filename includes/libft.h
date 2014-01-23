@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/19 16:07:32 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/31 12:12:03 by aviala           ###   ########.fr       */
+/*   Updated: 2014/01/23 21:19:36 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,9 +103,9 @@ void	ft_lstadd(t_list **lst, t_list *p_new);
 void	ft_lstdelone(t_list **lst, void (*del)(void *, size_t));
 size_t	ft_lstlen(const t_list *lst);
 t_list	*ft_lstnew(void const *data, size_t data_size);
-t_list	*ft_lst_push_back(const t_list *lst, const void *data,
+t_list	*ft_lst_pushback(const t_list *lst, const void *data,
 							const size_t data_size);
-t_list	*ft_lst_push_front(const t_list *b_lst, const void *data,
+t_list	*ft_lst_pushfront(const t_list *b_lst, const void *data,
 							const size_t data_size);
 
 /*
