@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/19 16:07:32 by aviala            #+#    #+#             */
-/*   Updated: 2014/01/23 21:19:36 by aviala           ###   ########.fr       */
+/*   Updated: 2014/01/23 21:03:37 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,14 @@
 # define E_OPEN_W " Error : Open in write mode incorrect file descriptor."
 # define E_OPEN_R " Error : Open in read mode incorrect file descriptor."
 
-typedef struct	s_list
+typedef struct		s_list
 {
 	void			*data;
 	size_t			data_size;
 	struct s_list	*next;
-}				t_list;
+}					t_list;
+
+typedef int (*ft_is)(const int c);
 
 int		ft_isalnum(const int c);
 int		ft_isalpha(const int c);
@@ -84,6 +86,7 @@ char	*ft_strstr(const char *s1, const char *s2);
 char	*ft_strnstr(const char *s1, const char *s2, size_t n);
 char	*ft_strsub(const char *s, unsigned int start, size_t len);
 char	*ft_strtrim(const char *s);
+void	ft_str_to_lst(t_list **alst, const char *s, ft_is f);
 size_t	ft_countnc(const char *s, const char c, size_t n);
 
 /*
@@ -101,11 +104,14 @@ void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void	ft_lstdel(t_list **lst, void (*del)(void *, size_t));
 void	ft_lstadd(t_list **lst, t_list *p_new);
 void	ft_lstdelone(t_list **lst, void (*del)(void *, size_t));
+void	ft_lstget(t_list **alst, const char *s, int i, int j);
 size_t	ft_lstlen(const t_list *lst);
 t_list	*ft_lstnew(void const *data, size_t data_size);
-t_list	*ft_lst_pushback(const t_list *lst, const void *data,
+void	*ft_lst_pushback_new(t_list *lst, t_list *lst_new);
+void	*ft_lst_pushfront_new(t_list *lst, t_list *lst_new);
+void	*ft_lst_pushback(t_list *lst, const void *data,
 							const size_t data_size);
-t_list	*ft_lst_pushfront(const t_list *b_lst, const void *data,
+void	*ft_lst_pushfront(t_list *b_lst, const void *data,
 							const size_t data_size);
 
 /*
@@ -117,3 +123,4 @@ void	ft_swapint(int *a, int *b);
 char	*ft_strrev(char *str);
 
 #endif /* !LIBFT_H */
+
