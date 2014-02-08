@@ -6,7 +6,7 @@
 #    By: aviala <aviala@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/20 18:47:54 by aviala            #+#    #+#              #
-#    Updated: 2014/02/08 19:37:57 by aviala           ###   ########.fr        #
+#    Updated: 2014/02/08 20:02:55 by aviala           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -49,14 +49,14 @@ SRC =	ft_strlen.c	ft_isalnum.c	ft_isalpha.c	ft_isascii.c \
 	ft_strrev.c		ft_swapchar.c	ft_lstnew.c		ft_lstdelone.c \
 	ft_lstadd.c		ft_lstdel.c		ft_lstiter.c	ft_isspace.c \
 	ft_islower.c	ft_isupper.c	ft_lstlen.c		ft_lst_push_back.c \
-	get_next_line.c	ft_lst_push_front.c \
-	ft_swapint.c	ft_open.c \
-	ft_strpos.c		ft_countc.c
+	ft_strpos.c		ft_countc.c		ft_swapint.c	ft_open.c \
+	get_next_line.c	ft_printf.c		ft_lst_push_front.c 
 
+# Deprecating or moving math function?
 #ft_ceil.c		ft_floor.c		ft_sqrt.c		ft_pow.c
 #ft_cos.c		ft_sin.c		ft_abs.c		ft_factorial.c \
-
 #ft_lstmap.c
+
 OBJS = $(SRC:.c=.o)
 NAME = libft.a
 OBJS_PREF = $(addprefix $(OBJDIR)/, $(OBJS))

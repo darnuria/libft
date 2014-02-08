@@ -6,7 +6,7 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/08 17:19:07 by aviala            #+#    #+#             */
-/*   Updated: 2014/02/08 19:33:01 by aviala           ###   ########.fr       */
+/*   Updated: 2014/02/08 19:43:18 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,26 @@
 
 # include <sys/stat.h>
 # include <stddef.h>
+# include <stdarg.h>
 
+/*
+** Customs Defines.
+*/ 
 # define E_OPEN_W " Error : Open in write mode incorrect file descriptor."
 # define E_OPEN_R " Error : Open in read mode incorrect file descriptor."
 
 /*
-** Printing
+** Printing.
+*/
+
+/*
+** Printing With formating.
+*/
+
+size_t	ft_printf(const char *format, ...);
+
+/*
+** Printing without formating.
 */
 
 size_t	ft_putchar(char c);
