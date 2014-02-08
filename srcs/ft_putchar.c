@@ -6,12 +6,13 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 20:28:01 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/19 03:20:46 by aviala           ###   ########.fr       */
+/*   Updated: 2014/02/08 19:32:19 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include "libft.h"
+
+#include "ftio.h"
 
 size_t	ft_putchar(char c)
 {

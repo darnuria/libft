@@ -6,11 +6,13 @@
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 20:40:43 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/10 11:51:48 by aviala           ###   ########.fr       */
+/*   Updated: 2014/02/08 19:32:24 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
+
+#include "ftio.h"
 
 size_t	ft_putnbr(int n)
 {
