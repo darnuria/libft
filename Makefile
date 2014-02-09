@@ -1,14 +1,14 @@
-#******************************************************************************#
+# **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: aviala <aviala@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2013/11/20 18:47:54 by aviala            #+#    #+#              #
-#    Updated: 2014/02/09 20:09:41 by aviala           ###   ########.fr        #
+#    Created: 2014/02/09 20:16:19 by aviala            #+#    #+#              #
+#    Updated: 2014/02/09 20:16:49 by aviala           ###   ########.fr        #
 #                                                                              #
-#******************************************************************************#
+# **************************************************************************** #
 
 DEBUG =
 INCDIR = includes
@@ -56,7 +56,6 @@ SRC =	ft_strlen.c	ft_isalnum.c	ft_isalpha.c	ft_isascii.c \
 #ft_ceil.c		ft_floor.c		ft_sqrt.c		ft_pow.c
 #ft_cos.c		ft_sin.c		ft_abs.c		ft_factorial.c \
 #ft_lstmap.c
-
 OBJS = $(SRC:.c=.o)
 NAME = libft.a
 OBJS_PREF = $(addprefix $(OBJDIR)/, $(OBJS))

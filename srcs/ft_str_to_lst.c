@@ -1,24 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_push_back.c                                 :+:      :+:    :+:   */
+/*   ft_str_to_lst.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/12/02 06:58:36 by aviala            #+#    #+#             */
-/*   Updated: 2014/01/01 22:41:24 by aviala           ###   ########.fr       */
+/*   Created: 2014/01/23 20:04:27 by aviala            #+#    #+#             */
+/*   Updated: 2014/01/23 21:03:18 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lst_push_back(const t_list *lst,
-							const void *data,
-							const size_t data_size)
+void	ft_str_to_lst(t_list **alst, const char *s, ft_is f)
 {
-	t_list	*p_tmp;
+	t_list	*new_list;
+	int		i;
+	int		j;
 
-	while ((p_tmp = lst->next) != NULL)
-		;
-	return (ft_lstnew(data, data_size));
+	i = 0;
+	j = 0;
+	while (s[i])
+	{
+		while (s[i] && f(s[i]))
+		{
+			i++;
+		}
+		new_list = ft_lstnew(s, i - j);
+		if (!*alst)
+		{
+			*alst = new_list;
+		}	
+		else
+		{
+			ft_lst_pushback_new(*alst, new_list); 
+		}
+		while (f(s[i]))
+		{
+			i++;
+		}
+		j = i;
+	}
 }
+

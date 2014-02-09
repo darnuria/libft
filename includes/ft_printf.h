@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_push_front.c                                :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aviala <aviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/12/02 06:57:48 by aviala            #+#    #+#             */
-/*   Updated: 2013/12/13 03:20:57 by aviala           ###   ########.fr       */
+/*   Created: 2013/12/10 10:01:43 by aviala            #+#    #+#             */
+/*   Updated: 2014/01/23 15:06:20 by aviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_PRINTF
+# define FT_PRINTF
 
-t_list	*ft_lst_push_front(const t_list *b_lst,
-							const void *data,
-							const size_t data_size)
-{
-	t_list	*b_head;
+# include <string.h>
+# include <stdarg.h>
 
-	if ((b_head = ft_lstnew(data, data_size)) != NULL)
-	{
-		b_head->next = (t_list *) b_lst;
-	}
-	return (b_head);
-}
+size_t	ft_selector(char *p, va_list	*ap);
+size_t	ft_printf(const char *format, ...);
+
+#endif
