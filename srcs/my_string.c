@@ -1,6 +1,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <ctype.h>
 
 #include "my_string.h"
 
@@ -65,12 +66,6 @@ char *my_strdup(const char *s1) {
   }
 }
 
-void my_strdel(char **as) {
-  if (as) {
-    my_memdel((void **) as);
-  }
-}
-
 void my_striter(char *s, void (*f)(char *)) {
   while (*s++) {
     f(s);
@@ -129,7 +124,7 @@ char *my_strnjoin(char const *s1, char const *s2,
 
   if (new_str != NULL) {
     strncpy(new_str, s1, n1);
-    strcat(new_str, s2, n2);
+    strncat(new_str, s2, n2);
   }
   return (new_str);
 }
@@ -139,6 +134,7 @@ char *my_strjoin(char const *s1, char const *s2) {
   size_t len_s2 = strlen(s2);
   return my_strnjoin(s1, s2, len_s1, len_s2);
 }
+
 void my_strclr(char *s) {
   for (size_t i = 0; s[i] != '\0'; i++) {
     s[i] = '\0';
@@ -152,7 +148,7 @@ char  *my_strtrim(char const *s) {
     i++;
   }
   size_t j = strlen(s);
-  while (my_istrailling(s[j - 1])) {
+  while (isspace(s[j - 1])) {
     j--;
   }
   if (j != 0) {
@@ -178,29 +174,6 @@ char *my_strrev(char *s) {
   return (s);
 }
 
-char *my_strstr(const char *s1, const char *s2) {
-  return (my_strnstr(s1, s2, strlen(s1)));
-}
-
-char *my_strnstr(const char *s1, const char *s2, size_t n) {
-  if (s2[0] == '\0') {
-    return ((char *) s1);
-  }
-  for (size_t i = 0, j = 0; s1[i] && i < n; i++, j = 0) {
-    j = 0;
-    while (s2[j] == s1[i + j] &&
-        s2[j] != '\0' &&
-        (i + j) < n) {
-      j++;
-    }
-    if (s2[j] == '\0') {
-      return ((char *) s1 + i);
-    }
-    i++;
-  }
-  return (NULL);
-}
-
 static
 void my_minmax(char *s, const int n) {
   if ((long) n == -2147483648) {
@@ -220,7 +193,7 @@ void my_rev_or_not(char *s) {
 }
 
 static
-char *my_rec_itoa(const int n, char *s, const int i) {
+void my_rec_itoa(const int n, char *s, const int i) {
   if (n) {
     s[i] = n % 10 + 48;
     my_rec_itoa(n / 10, s, i + 1);
@@ -228,11 +201,11 @@ char *my_rec_itoa(const int n, char *s, const int i) {
 }
 
 char *my_itoa(int n) {
-  char *s = my_strnew(12)
+  char *s = my_strnew(12);
 
-    if (s == NULL) {
-      return (NULL);
-    }
+  if (s == NULL) {
+    return (NULL);
+  }
   my_minmax(s, n);
   size_t i = 0;
   if (s[i] != '\0') {
@@ -265,3 +238,29 @@ void my_swapchar(char *a, char *b) {
   *a = *b;
   *b = swap;
 }
+
+/*
+   char *my_strstr(const char *s1, const char *s2) {
+   return (my_strnstr(s1, s2, strlen(s1)));
+   }
+
+   char *my_strnstr(const char *s1, const char *s2, size_t n) {
+   if (s2[0] == '\0') {
+   return ((char *) s1);
+   }
+   for (size_t i = 0, j = 0; s1[i] && i < n; i++, j = 0) {
+   j = 0;
+   while (s2[j] == s1[i + j] &&
+   s2[j] != '\0' &&
+   (i + j) < n) {
+   j++;
+   }
+   if (s2[j] == '\0') {
+   return ((char *) s1 + i);
+   }
+   i++;
+   }
+   return (NULL);
+   }
+   */
+

@@ -4,6 +4,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <ctype.h>
 
 #include "my_string.h"
 
@@ -31,7 +32,7 @@ char *my_strjoin(char const *s1, char const *s2);
 char  *my_strtrim(char const *s);
 char *my_strrev(char *s);
 void my_swapchar(char *a, char *b);
-
+void my_strclr(char *s);
 char *my_itoa(int n);
 
 #endif // MY_STRING_H

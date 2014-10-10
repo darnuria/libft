@@ -56,21 +56,21 @@ list_t* list_new(void *data) {
   return (new_elem);
 }
 
-void *list_pushback(list_t *lst, void *data) {
+void list_pushback(list_t *lst, void *data) {
   list_t *p_tmp;
 
   while ((p_tmp = lst->next) != NULL) {}
   p_tmp->next = list_new(data);
 }
 
-void *list_pushback_new(list_t *lst, list_t *new) {
+void list_pushback_new(list_t *lst, list_t *new) {
   list_t *p_tmp;
 
   while ((p_tmp = lst->next) != NULL) { }
   p_tmp->next = new;
 }
 
-void *list_pushfront(list_t *b_lst, void *data) {
+void list_pushfront(list_t *b_lst, void *data) {
   list_t *b_head;
 
   if ((b_head = list_new(data)) != NULL) {
@@ -79,7 +79,7 @@ void *list_pushfront(list_t *b_lst, void *data) {
   b_lst = b_head;
 }
 
-void *list_pushfront_new(list_t *b_lst, list_t *lst_new) {
+void list_pushfront_new(list_t *b_lst, list_t *lst_new) {
   if ((b_lst != NULL)) {
     lst_new->next = b_lst;
   }
