@@ -1,87 +1,131 @@
 #include "list.h"
+#include "my_string.h"
 #include <stdlib.h>
+#include <stdio.h>
 
-void list_add(list_t **alst, list_t *p_new) {
-  list_t *begin_prev = p_new;
-  begin_prev->next = *alst;
-  *alst = begin_prev;
+list_t* list_new(void *data) {
+  list_t *new_elem = malloc(sizeof(list_t));
+
+  if (new_elem) {
+    new_elem->next = NULL;
+    if (data) {
+      new_elem->data = data;
+    } else {
+      new_elem->data = NULL;
+    }
+  } else {
+    perror("list_new: ");
+  }
+  return (new_elem);
 }
 
 void list_delete(list_t **alst, fun_delete_t fun) {
   if (*alst != NULL) {
     list_t *tmp = (*alst)->next;
     list_delete_node(alst, fun);
-    list_delete(&tmp, fun);
+    if (tmp) {
+      list_delete(&tmp, fun);
+    }
   }
 }
 
-void list_delete_node(list_t **alst, fun_delete_t fun) {
+void list_delete_node(list_t **alst, fun_delete_t *fun) {
   list_t *elem = *alst;
   fun(elem->data);
   free(*alst);
   *alst = NULL;
 }
 
-void list_iter(list_t *lst, void (*f)(list_t *elem)) {
-  if (lst->next != NULL) {
-    list_iter(lst->next, f);
-  }
-  f(lst);
+void list_link(list_t **alst, list_t *p_new) {
+  list_t *new_head = p_new;
+  new_head->next = *alst;
+  *alst = new_head;
 }
 
-size_t list_len(const list_t *lst) {
-  list_t *tmp;
+void list_map_mut(list_t *lst, fun_map_t *fun) {
+  if (lst != NULL) {
+    fun(lst->data);
+    list_map_mut(lst->next, fun);
+  }
+}
+
+size_t list_length(const list_t *lst) {
+  const list_t *tmp = lst;
   size_t i;
 
-  i = 0;
-  while ((tmp = lst->next) != NULL)
-    i++;
+  for (i = 0; tmp; i += 1) {
+    tmp = tmp->next;
+  }
   return (i);
 }
 
-list_t* list_new(void *data) {
-  list_t *new_elem = malloc(sizeof(list_t));
+void list_append(list_t *lst, void *data) {
+  list_t *tmp = lst;
 
-  if (new_elem != NULL) {
-    if (data == NULL) {
-      new_elem->data = NULL;
-    } else {
-      new_elem->data = data;
-      if (new_elem->data) {
-        free(new_elem);
-      }
+  while (tmp->next != NULL) {
+    tmp = tmp->next;
+  }
+  tmp->next = list_new(data);
+}
+
+void list_concat(list_t *lst, list_t *new) {
+  list_t *tmp = lst;
+
+  while (tmp->next != NULL) {
+    tmp = tmp->next;
+  }
+  tmp->next = new;
+}
+
+void list_prepend(list_t *lst, void *data) {
+  list_t *tmp = list_new(data);
+
+  if (tmp) {
+    tmp->next = lst;
+    lst = tmp;
+  } else {
+    fprintf(stderr, "list_prepend: Allocating a new list element failed.\n");
+  }
+}
+
+void list_insert(list_t *lst, size_t index, void *data) {
+  list_t *tmp = list_new(data);
+
+  if (tmp) {
+    list_t *iterator = lst;
+    for (size_t i = 0; i < index && iterator != NULL; i += 1) {
+      iterator = iterator->next;
     }
-    new_elem->next = NULL;
+    list_t *save = iterator->next->next;
+    iterator->next = tmp;
+    tmp->next = save;
+  } else {
+    fprintf(stderr, "list_prepend: Allocating a new list element failed.\n");
   }
-  return (new_elem);
 }
 
-void list_pushback(list_t *lst, void *data) {
-  list_t *p_tmp;
-
-  while ((p_tmp = lst->next) != NULL) {}
-  p_tmp->next = list_new(data);
-}
-
-void list_pushback_new(list_t *lst, list_t *new) {
-  list_t *p_tmp;
-
-  while ((p_tmp = lst->next) != NULL) { }
-  p_tmp->next = new;
-}
-
-void list_pushfront(list_t *b_lst, void *data) {
-  list_t *b_head;
-
-  if ((b_head = list_new(data)) != NULL) {
-    b_head->next = b_lst;
+char *show_string(void *data) {
+  if (data) {
+    return ((char*) my_strdup(data));
+  } else {
+    fprintf(stderr, "show_string: data is NULL.\n");
+    return data;
   }
-  b_lst = b_head;
 }
 
-void list_pushfront_new(list_t *b_lst, list_t *lst_new) {
-  if ((b_lst != NULL)) {
-    lst_new->next = b_lst;
+void print_list(list_t *lst, fun_show_data_t *fun) {
+  putchar('[');
+  for (list_t *tmp = lst; tmp; tmp = tmp->next) {
+    char *to_print = fun(tmp->data);
+    printf("%s,", to_print);
+    free(to_print);
   }
-  b_lst = lst_new;
+  putchar(']');
+}
+
+char *show_list(list_t *lst, fun_show_data_t *fun) {
+  (void) lst;
+  (void) fun;
+  fprintf(stderr, "show_list: Unimplemented Error\n");
+  return NULL;
 }
