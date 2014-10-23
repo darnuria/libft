@@ -14,6 +14,7 @@ typedef void (fun_delete_t)(void* data);
 typedef void (fun_map_t)(void* data);
 typedef char* (fun_show_data_t)(void* data);
 typedef int (fun_acc_t)(list_t* list, size_t acc);
+typedef int (fun_predicat_t)(animal_data_t *data, animal_data_t *to_find);
 
 // Static functions
 
@@ -30,8 +31,8 @@ void list_map_mut(list_t *list, fun_map_t fun);
 
 size_t list_length(const list_t *list);
 void list_append(list_t *list, void *data);
-void list_prepend(list_t *list, void *data);
-void list_concat(list_t *list, list_t *new_list);
+list_t *list_prepend(list_t *list, void *data);
+list_t *list_concat(list_t *list, list_t *new_list);
 void list_insert(list_t *lst, size_t index, void *data);
 
 void print_list(list_t *lst, fun_show_data_t *fun);

@@ -68,16 +68,17 @@ void list_append(list_t *lst, void *data) {
   tmp->next = list_new(data);
 }
 
-void list_concat(list_t *lst, list_t *new) {
-  list_t *tmp = lst;
+list_t *list_concat(list_t *fst, list_t *snd) {
+  list_t *tmp = fst;
 
-  while (tmp->next != NULL) {
-    tmp = tmp->next;
+  while (fst->next != NULL) {
+    fst = fst->next;
   }
-  tmp->next = new;
+  fst->next = snd;
+  return fst;
 }
 
-void list_prepend(list_t *lst, void *data) {
+list_t *list_prepend(list_t *lst, void *data) {
   list_t *tmp = list_new(data);
 
   if (tmp) {
@@ -86,8 +87,32 @@ void list_prepend(list_t *lst, void *data) {
   } else {
     fprintf(stderr, "list_prepend: Allocating a new list element failed.\n");
   }
+  return lst;
 }
 
+list_t *list_pop(list_t *lst, fun_predicat_t *equals, void *data_pop) {
+  list_t *prev = NULL;
+
+  for (list_t *tmp = lst; tmp; prev = tmp, tmp = tmp->next) {
+    if (equals(tmp, data_pop)) {
+      if (prev != NULL) {
+        prev->next = tmp->next;
+      }
+      tmp->next = NULL;
+      return tmp;
+    }
+  }
+  return NULL;
+}
+
+list_t *list_find(list_t *lst, fun_predicat_t *fun, void *data_to_find) {
+   for (list_t *tmp = list_new(data); tmp; tmp = tmp->next) {
+     if (fun(tmp->data, data_to_find)) {
+       return (tmp);
+     }
+   }
+   return NULL;
+}
 void list_insert(list_t *lst, size_t index, void *data) {
   list_t *tmp = list_new(data);
 
