@@ -25,7 +25,7 @@ endif
 SRC = list.c my_string.c
 
 OBJS = $(SRC:.c=.o)
-	NAME = libmystd.a
+	NAME = libmy_stdext.a
 	OBJS_PREF = $(addprefix $(OBJDIR)/, $(OBJS))
 
 all: $(NAME)

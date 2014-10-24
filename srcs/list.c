@@ -2,8 +2,9 @@
 #include "my_string.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdint.h>
 
-list_t* list_new(void *data) {
+list_t* list_new_shallow(void *data) {
   list_t *new_elem = malloc(sizeof(list_t));
 
   if (new_elem) {
@@ -17,6 +18,12 @@ list_t* list_new(void *data) {
     perror("list_new: ");
   }
   return (new_elem);
+}
+
+list_t *list_new_deep(void *data, size_t word_size) {
+  (void) data;
+  (void) word_size;
+  return NULL;
 }
 
 void list_delete(list_t **alst, fun_delete_t fun) {
@@ -59,27 +66,25 @@ size_t list_length(const list_t *lst) {
   return (i);
 }
 
-void list_append(list_t *lst, void *data) {
-  list_t *tmp = lst;
-
-  while (tmp->next != NULL) {
-    tmp = tmp->next;
+void list_append(list_t **lst, void *data) {
+  list_t *new = list_new_shallow(data);
+  if (new) {
+    *lst = list_concat(*lst, new);
   }
-  tmp->next = list_new(data);
 }
 
 list_t *list_concat(list_t *fst, list_t *snd) {
   list_t *tmp = fst;
 
-  while (fst->next != NULL) {
-    fst = fst->next;
+  while (tmp->next != NULL) {
+    tmp = tmp->next;
   }
-  fst->next = snd;
-  return fst;
+  tmp->next = snd;
+  return tmp;
 }
 
 list_t *list_prepend(list_t *lst, void *data) {
-  list_t *tmp = list_new(data);
+  list_t *tmp = list_new_shallow(data);
 
   if (tmp) {
     tmp->next = lst;
@@ -106,22 +111,34 @@ list_t *list_pop(list_t *lst, fun_predicat_t *equals, void *data_pop) {
 }
 
 list_t *list_find(list_t *lst, fun_predicat_t *fun, void *data_to_find) {
-   for (list_t *tmp = list_new(data); tmp; tmp = tmp->next) {
+   for (list_t *tmp = lst; tmp; tmp = tmp->next) {
      if (fun(tmp->data, data_to_find)) {
        return (tmp);
      }
    }
    return NULL;
 }
+
+static
+list_t *list_bound(list_t *iterator) {
+    if (iterator == NULL) {
+      return NULL;
+    } else if (iterator->next == NULL) {
+      return NULL;
+    } else {
+      return iterator->next->next;
+    }
+}
+
 void list_insert(list_t *lst, size_t index, void *data) {
-  list_t *tmp = list_new(data);
+  list_t *tmp = list_new_shallow(data);
 
   if (tmp) {
     list_t *iterator = lst;
     for (size_t i = 0; i < index && iterator != NULL; i += 1) {
       iterator = iterator->next;
     }
-    list_t *save = iterator->next->next;
+    list_t *save = list_bound(iterator);
     iterator->next = tmp;
     tmp->next = save;
   } else {
@@ -153,4 +170,19 @@ char *show_list(list_t *lst, fun_show_data_t *fun) {
   (void) fun;
   fprintf(stderr, "show_list: Unimplemented Error\n");
   return NULL;
+}
+
+list_t *from_array(void *array, size_t length, size_t word_size) {
+  if (length > 0) {
+    list_t *lst = NULL;
+    for (size_t i = 0; i < length; i += 1) {
+        void *tmp = malloc(word_size);
+        memcpy(tmp, (void *)((uint8_t *)array + i * word_size), word_size);
+        list_t *new_elem = list_new_shallow(tmp);
+        lst = list_concat(new_elem, lst);
+    }
+    return lst;
+  } else {
+    return NULL;
+  }
 }
