@@ -5,7 +5,7 @@
 
 #include "my_string.h"
 
-void* my memcalloc(const size_t size,
+void* my_memcalloc(const size_t size,
     const size_t word_size,
     const char placeholder) {
   void *map = malloc(size * word_size);

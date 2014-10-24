@@ -49,13 +49,13 @@ void list_link(list_t **alst, list_t *p_new) {
   *alst = new_head;
 }
 
-list_t *filter(list_t *lst, fun_predicat_t *fun) {
+list_t *list_filter(list_t *lst, fun_predicat_t *fun, const list_t *cmp) {
   list_t *prev = NULL;
   list_t *removed = NULL;
   list_t *iter_removed = NULL;
 
   for (list_t *tmp = lst; tmp; prev = tmp, tmp = tmp->next) {
-    if (fun(tmp, data_pop)) {
+    if (fun(tmp, cmp)) {
       if (prev != NULL) {
         prev->next = tmp->next;
       }
