@@ -49,6 +49,29 @@ void list_link(list_t **alst, list_t *p_new) {
   *alst = new_head;
 }
 
+list_t *filter(list_t *lst, fun_predicat_t *fun) {
+  list_t *prev = NULL;
+  list_t *removed = NULL;
+  list_t *iter_removed = NULL;
+
+  for (list_t *tmp = lst; tmp; prev = tmp, tmp = tmp->next) {
+    if (fun(tmp, data_pop)) {
+      if (prev != NULL) {
+        prev->next = tmp->next;
+      }
+      tmp->next = NULL;
+      if (removed == NULL) {
+        removed = tmp;
+        iter_removed = removed;
+      } else {
+        iter_removed->next = tmp;
+        iter_removed = iter_removed->next;
+      }
+    }
+  }
+  return removed;
+}
+
 void list_map_mut(list_t *lst, fun_map_t *fun) {
   if (lst != NULL) {
     fun(lst->data);
