@@ -5,6 +5,18 @@
 
 #include "my_string.h"
 
+void* my memcalloc(const size_t size,
+    const size_t word_size,
+    const char placeholder) {
+  void *map = malloc(size * word_size);
+  if (map) {
+    memset(map, placeholder, size);
+  } else {
+    perror("my_memcalloc: ");
+  }
+  return map;
+}
+
 void *my_memalloc(size_t size) {
   if (size) {
     void *new_ptr = malloc(size);

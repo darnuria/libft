@@ -8,6 +8,9 @@
 
 #include "my_string.h"
 
+void* my memcalloc(const size_t size,
+    const size_t word_size,
+    const char placeholder);
 void *my_memalloc(size_t size);
 void my_memdel(void **p);
 
