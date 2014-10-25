@@ -28,7 +28,10 @@ OBJS = $(SRC:.c=.o)
 	NAME = libmy_stdext.a
 	OBJS_PREF = $(addprefix $(OBJDIR)/, $(OBJS))
 
-all: $(NAME)
+all: objdir $(NAME)
+
+objdir:
+	@mkdir -p objs
 
 $(NAME): $(OBJS_PREF)
 	@echo "Linking $@."
