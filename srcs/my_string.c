@@ -5,6 +5,10 @@
 
 #include "my_string.h"
 
+int random_range(const uint32_t range) {
+  return rand() % range;
+}
+
 void* my_memcalloc(const size_t size,
     const size_t word_size,
     const char placeholder) {

@@ -37,10 +37,14 @@ void list_delete(list_t **alst, fun_delete_t fun) {
 }
 
 void list_delete_node(list_t **alst, fun_delete_t *fun) {
-  list_t *elem = *alst;
-  fun(elem->data);
-  free(*alst);
-  *alst = NULL;
+  if (*alst) {
+    if ((*alst)->data) {
+      list_t *elem = *alst;
+      fun(elem->data);
+      free(*alst);
+      *alst = NULL;
+    }
+  }
 }
 
 void list_link(list_t **alst, list_t *p_new) {
@@ -49,24 +53,26 @@ void list_link(list_t **alst, list_t *p_new) {
   *alst = new_head;
 }
 
-list_t *list_filter(list_t *lst, fun_predicat_t *fun, const list_t *cmp) {
+list_t *list_filter(list_t **lst, fun_predicat_t *fun, const list_t *cmp) {
   list_t *prev = NULL;
   list_t *removed = NULL;
-  list_t *iter_removed = NULL;
 
-  for (list_t *tmp = lst; tmp; prev = tmp, tmp = tmp->next) {
-    if (fun(tmp, cmp)) {
+  for (list_t *ite = *lst; ite != NULL; prev = ite, ite = ite->next) {
+    if (fun(ite, cmp)) {
+      list_t *tmp = ite;
+      ite = tmp->next;
       if (prev != NULL) {
-        prev->next = tmp->next;
+        prev->next = ite;
+      } else {
+        *lst = ite;
       }
       tmp->next = NULL;
-      if (removed == NULL) {
-        removed = tmp;
-        iter_removed = removed;
-      } else {
-        iter_removed->next = tmp;
-        iter_removed = iter_removed->next;
-      }
+
+      removed = list_concat(tmp, removed);
+      tmp = NULL;
+    }
+    if (ite == NULL) {
+      return (removed);
     }
   }
   return removed;
@@ -103,7 +109,7 @@ list_t *list_concat(list_t *fst, list_t *snd) {
     tmp = tmp->next;
   }
   tmp->next = snd;
-  return tmp;
+  return fst;
 }
 
 list_t *list_prepend(list_t *lst, void *data) {
@@ -134,23 +140,23 @@ list_t *list_pop(list_t *lst, fun_predicat_t *equals, void *data_pop) {
 }
 
 list_t *list_find(list_t *lst, fun_predicat_t *fun, void *data_to_find) {
-   for (list_t *tmp = lst; tmp; tmp = tmp->next) {
-     if (fun(tmp->data, data_to_find)) {
-       return (tmp);
-     }
-   }
-   return NULL;
+  for (list_t *tmp = lst; tmp; tmp = tmp->next) {
+    if (fun(tmp->data, data_to_find)) {
+      return (tmp);
+    }
+  }
+  return NULL;
 }
 
 static
 list_t *list_bound(list_t *iterator) {
-    if (iterator == NULL) {
-      return NULL;
-    } else if (iterator->next == NULL) {
-      return NULL;
-    } else {
-      return iterator->next->next;
-    }
+  if (iterator == NULL) {
+    return NULL;
+  } else if (iterator->next == NULL) {
+    return NULL;
+  } else {
+    return iterator->next->next;
+  }
 }
 
 void list_insert(list_t *lst, size_t index, void *data) {
@@ -199,10 +205,10 @@ list_t *from_array(void *array, size_t length, size_t word_size) {
   if (length > 0) {
     list_t *lst = NULL;
     for (size_t i = 0; i < length; i += 1) {
-        void *tmp = malloc(word_size);
-        memcpy(tmp, (void *)((uint8_t *)array + i * word_size), word_size);
-        list_t *new_elem = list_new_shallow(tmp);
-        lst = list_concat(new_elem, lst);
+      void *tmp = malloc(word_size);
+      memcpy(tmp, (void *)((uint8_t *)array + i * word_size), word_size);
+      list_t *new_elem = list_new_shallow(tmp);
+      lst = list_concat(new_elem, lst);
     }
     return lst;
   } else {
