@@ -29,7 +29,7 @@ void list_delete(list_t **list, fun_delete_t fun);
 list_t *list_pop(list_t *lst, fun_predicat_t *equals, void *data_pop);
 void list_link(list_t **list, list_t *new_p);
 void list_map_mut(list_t *list, fun_map_t fun);
-list_t *list_filter(list_t **lst, fun_predicat_t *fun, const list_t *cmp);
+list_t *list_filter(list_t **lst, fun_predicat_t *fun, const void *cmp);
 //size_t list_foldl(const list_t *xs, size_t acc, fun_acc_t fun);
 
 list_t *list_find(list_t *lst, fun_predicat_t *fun, void *data_to_find);

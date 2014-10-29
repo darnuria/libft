@@ -2,13 +2,13 @@ DEBUG =
 INCDIR = includes
 SRCDIR = srcs
 OBJDIR = objs
-CC = cc
+CC = gcc
 LD = $(CC)
 
-CFLAGS = -Wall -Wextra -Werror -pedantic -pedantic-errors -std=c99
+CFLAGS = -Wall -Wextra -Werror -pedantic -pedantic-errors -std=gnu11
 LDFLAGS =
 ifeq ($(DEBUG),yes)
-	CC = clang
+	CC = gcc
 	CFLAGS += -ggdb3 -fstack-protector-all -Wshadow -Wunreachable-code \
 			  -Wstack-protector -pedantic-errors -O0 -W -Wundef -fno-common \
 			  -Wfatal-errors -Wstrict-prototypes -Wmissing-prototypes \
