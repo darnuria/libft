@@ -9,11 +9,7 @@ list_t* list_new_shallow(void *data) {
 
   if (new_elem) {
     new_elem->next = NULL;
-    if (data) {
-      new_elem->data = data;
-    } else {
-      new_elem->data = NULL;
-    }
+    new_elem->data = data;
   } else {
     perror("list_new: ");
   }
@@ -119,14 +115,17 @@ list_t *list_prepend(list_t *lst, void *data) {
 
   if (tmp) {
     tmp->next = lst;
-    lst = tmp;
   } else {
     fprintf(stderr, "list_prepend: Allocating a new list element failed.\n");
   }
-  return lst;
+  return tmp;
 }
 
-list_t *list_pop(list_t *lst, fun_predicat_t *equals, void *data_pop) {
+list_t *list_pop(
+    list_t *lst,
+    fun_predicat_t *equals,
+    void *data_pop
+    ) {
   list_t *prev = NULL;
 
   for (list_t *tmp = lst; tmp; prev = tmp, tmp = tmp->next) {
@@ -141,7 +140,11 @@ list_t *list_pop(list_t *lst, fun_predicat_t *equals, void *data_pop) {
   return NULL;
 }
 
-list_t *list_find(list_t *lst, fun_predicat_t *fun, void *data_to_find) {
+list_t *list_find(
+    list_t *lst,
+    fun_predicat_t *fun,
+    void *data_to_find
+    ) {
   for (list_t *tmp = lst; tmp; tmp = tmp->next) {
     if (fun(tmp->data, data_to_find)) {
       return (tmp);
@@ -151,7 +154,7 @@ list_t *list_find(list_t *lst, fun_predicat_t *fun, void *data_to_find) {
 }
 
 static
-list_t *list_bound(list_t *iterator) {
+list_t *list_bound(const list_t *iterator) {
   if (iterator == NULL) {
     return NULL;
   } else if (iterator->next == NULL) {
@@ -173,7 +176,7 @@ void list_insert(list_t *lst, size_t index, void *data) {
     iterator->next = tmp;
     tmp->next = save;
   } else {
-    fprintf(stderr, "list_prepend: Allocating a new list element failed.\n");
+    fprintf(stderr, "list_insert: Allocating a new list element failed.\n");
   }
 }
 
