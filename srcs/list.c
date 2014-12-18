@@ -182,7 +182,7 @@ void list_insert(list_t *lst, size_t index, void *data) {
 
 char *show_string(void *data) {
   if (data) {
-    return ((char*) my_strdup(data));
+    return ((char*) str_dup(data));
   } else {
     fprintf(stderr, "show_string: data is NULL.\n");
     return data;

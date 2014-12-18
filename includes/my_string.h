@@ -1,5 +1,5 @@
-#ifndef MY_STRING_H
-#define MY_STRING_H
+#ifndef str_ING_H
+#define str_ING_H
 
 #include <string.h>
 #include <stdlib.h>
@@ -9,35 +9,35 @@
 
 #include "my_string.h"
 
-int random_range(const uint32_t range);
-void* my_memcalloc(const size_t size,
+int  random_range(const uint32_t range);
+void* mem_calloc(const size_t size,
     const size_t word_size,
     const char placeholder);
-void *my_memalloc(size_t size);
-void my_memdel(void **p);
+void* mem_alloc(size_t size);
+void* mem_delete(void *p);
 
-char *my_strnew(size_t size);
-void my_strdel(char **s);
+char* str_new(size_t size);
+void* str_delete(char *s);
 
-size_t my_strpos(const char *s, int (*predicate)(int));
-size_t my_countnc(const char *s, const char c, size_t n);
+size_t str_pos(const char *s, int (*predicate)(int));
+size_t str_countnc(const char *s, const char c, size_t n);
 
-char *my_strsub(char const *s, unsigned int start, size_t len);
-int my_strnequ(const char *s1, const char *s2, size_t n);
-int my_strequ(const char *s1, const char *s2);
-char *my_strdup(const char *s1);
-void my_striter(char *s, void (*f)(char *));
-void my_striteri(char *s, void (*f)(unsigned int, char *));
-char *my_strmap(char const *s, char (*f)(char));
-char *my_strmapi(char const *s, char (*f)(unsigned int, char));
-size_t my_strlcat(char *dst, const char *src, size_t size);
-char *my_strnjoin(char const *s1, char const *s2,
+char* str_sub(char const *s, unsigned int start, size_t len);
+int   str_nequ(const char *s1, const char *s2, size_t n);
+int   str_equ(const char *s1, const char *s2);
+void  str_iter(char *s, void (*f)(char *));
+void  str_iteri(char *s, void (*f)(unsigned int, char *));
+char* str_dup(const char *s2);
+char* str_map(char* const s, char (*f)(char));
+char* str_mapi(char* const s, char (*f)(unsigned int, char));
+size_t str_lcat(char *dst, const char *src, size_t size);
+char* str_njoin(char const *s1, char const *s2,
     const size_t n1, const size_t n2);
-char *my_strjoin(char const *s1, char const *s2);
-char  *my_strtrim(char const *s);
-char *my_strrev(char *s);
-void my_swapchar(char *a, char *b);
-void my_strclr(char *s);
+char *str_join(char const *s1, char const *s2);
+char *str_trim(char* const s);
+char *str_rev(char *s);
+void chr_swap(char * a, char * b);
+void str_clr(char* s);
 char *my_itoa(int n);
 
-#endif // MY_STRING_H
+#endif // str_ING_H
