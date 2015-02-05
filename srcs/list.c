@@ -49,6 +49,7 @@ void list_link(list_t **alst, list_t *p_new) {
   *alst = new_head;
 }
 
+// TOTALY BROKEN
 list_t *list_filter(list_t **lst, fun_predicat_t *fun, const void *cmp) {
   list_t *prev = NULL;
   list_t *removed = NULL;

@@ -4,7 +4,7 @@
 #include <string.h>
 #include <stdbool.h>
 
-// List
+// Simply linked list: Unstable.
 
 typedef struct s_list {
  void   *data;
@@ -16,10 +16,6 @@ typedef void (fun_map_t)(void* data);
 typedef char* (fun_show_data_t)(void* data);
 typedef int (fun_acc_t)(list_t* list, size_t acc);
 typedef bool (fun_predicat_t)(const void *data, const void *to_find);
-
-// Static functions
-
-// End Static function
 
 list_t* list_new_shallow(void *data);
 list_t *list_new_deep(void *data, size_t word_size);
